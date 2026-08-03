@@ -41,6 +41,19 @@
 
       <div style="max-width:720px;margin:0 auto">
         <div class="rel">
+          <h3>1.09 <span class="date">2026</span></h3>
+          <ul>
+            <li><strong>Built-in web browser</strong> — browse the web in a tab inside the client, with a navigation toolbar, address bar, favourites &amp; history (with an organize dialog), its own settings page, an "Open in internal browser" option on chat links, and downloads that follow your download settings.</li>
+            <li><strong>Classic file-list tree</strong> — optional <code>[+]/[-]</code> expand/collapse boxes on the share-browsing directory tree.</li>
+            <li><strong>Start with Windows</strong> — optional auto-start on login, with a configurable delay.</li>
+            <li><strong>IPv6 on NMDC hubs</strong> — support for the NMDC "IP64" extension: connect, search and transfer over IPv6 on hubs that advertise it. Hubs without it stay byte-for-byte IPv4-only, so nothing changes for existing hubs.</li>
+            <li><strong>Secure NMDC hubs</strong> — <code>nmdcs://</code> (TLS) hub support, with hardened handling of hub-driven redirects.</li>
+            <li><strong>Crash-safe config &amp; recovery</strong> — corrupt local state is quarantined and recovered from rotating <code>.bak</code> copies instead of being discarded; settings are written atomically; and a startup recovery prompt can repair the hash database or restore a backup after a crash, corruption, or the new <code>/repair</code> flag. Recovery tools live on the Auto-Recovery settings page.</li>
+            <li><strong>Periodic update checks</strong> — the updater now checks for new versions while the client is running, not only at startup.</li>
+            <li>Security: every browser navigation is validated against a URL scheme policy (including fallback paths), and a <code>$ConnectToMe</code> that carries a hostname instead of an IP is now rejected.</li>
+          </ul>
+        </div>
+        <div class="rel">
           <h3>1.08 <span class="date">2026</span></h3>
           <ul>
             <li><strong>Cast to your TV</strong> — stream what you're playing straight to DLNA renderers (smart TVs, media boxes) on your network, with device discovery and status feedback.</li>
