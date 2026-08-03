@@ -135,6 +135,29 @@ section { padding: 46px 0; }
 .rel ul { margin: 8px 0 30px; padding-left: 18px; }
 .rel li { color: var(--text-dim); margin-bottom: 5px; }
 
+/* ---- plugins page ---- */
+.plugins { max-width: 720px; margin: 0 auto; display: grid; gap: 22px; }
+.plugin { background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 26px 28px; box-shadow: var(--shadow); }
+.plugin .phead { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.plugin h2 { font-size: 1.5rem; margin: 0; }
+.pver { font-size: .85rem; color: var(--text-faint);
+  border: 1px solid var(--border); border-radius: 999px; padding: 3px 12px; }
+.pdesc { margin: 10px 0 18px; }
+.plugin .flist { gap: 10px; }
+.plugin .frow { background: var(--bg-elev); }
+.pmeta { display: flex; gap: 8px 20px; flex-wrap: wrap; margin-top: 18px;
+  font-size: .85rem; color: var(--text-faint); }
+.pmeta b { color: var(--text-dim); font-weight: 600; }
+.pactions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+.plugins + .note { max-width: 720px; }
+.devsec { padding-top: 0; }
+.devnote { max-width: 720px; margin: 0 auto; }
+.devnote .subhead { margin-top: 0; }
+code { font-family: Consolas, "SF Mono", Menlo, monospace; font-size: .88em;
+  background: var(--bg-elev); border: 1px solid var(--border);
+  border-radius: 5px; padding: 1px 6px; color: var(--text-dim); }
+
 /* ---- footer ---- */
 footer.site { border-top: 1px solid var(--border); margin-top: 40px; padding: 34px 0; color: var(--text-faint); font-size: .85rem; }
 footer.site .cols { display: flex; gap: 40px; flex-wrap: wrap; justify-content: space-between; }

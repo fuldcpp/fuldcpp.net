@@ -6,7 +6,8 @@ Served by **GitHub Pages** at `https://fuldcpp.net/`.
 ## Layout
 
 ```
-index.html  features.html  download.html  changelog.html   the site
+index.html  features.html  plugins.html                    the site
+download.html  changelog.html
 assets/                                                     css + logo/favicon
 download/   FulDC-<ver>-x64.zip                             fresh-install package
 update/     version.xml  version.xml.sign                   updater manifest + signature
@@ -77,6 +78,20 @@ into the client (`airdcpp/airdcpp/core/crypto/pubkey.h`). Do this once, keep `ai
 5. After pushing, verify: `curl https://fuldcpp.net/update/version.xml | file -` shows no CRLF; the
    download ZIP contains no `Settings`/`*.key`; and an old client offered the higher `Build`
    accepts and self-installs.
+
+## Publishing a plugin release
+
+Plugins live in a separate repo, [fuldcpp/plugins](https://github.com/fuldcpp/plugins), and are
+**not** hosted here — `plugins.html` links straight at the GitHub release asset.
+
+1. In the plugins repo, tag the release `<plugin>-v<version>` (e.g. `squiggle-v2.4`) and upload the
+   packaged `.dcext` produced by that plugin's `pack.ps1` as the release asset.
+2. Update the plugin's card on `plugins.html`: the `.pver` pill, the size in `.pmeta`, and both
+   URLs (`/releases/download/<tag>/<file>.dcext` and `/releases/tag/<tag>`).
+
+The download URL embeds the tag, so step 2 is not optional — miss it and the page keeps serving the
+previous version. Verify with `curl -I <url>`: a 302 to `release-assets.githubusercontent.com` is
+correct, a 404 means the tag or asset name is wrong.
 
 > The private key `air_rsa` is **never** committed. The matching public key is embedded in the
 > client (`airdcpp/airdcpp/core/crypto/pubkey.h`); only updates signed by `air_rsa` are trusted.
