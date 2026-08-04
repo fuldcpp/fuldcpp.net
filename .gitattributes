@@ -2,5 +2,7 @@
 # Never let git rewrite line endings on these, or signature verification fails.
 update/version.xml       -text
 update/**/version.xml    -text
+# Same for the plugin catalog, whose signature covers the exact LF bytes of plugins.json.
+plugins.json             -text
 *.sign                   binary
 *.zip                    binary
