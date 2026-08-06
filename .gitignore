@@ -1,0 +1,21 @@
+# The update-signing private key must NEVER be committed.
+#
+# Its public half is compiled into every client (airdcpp/airdcpp/core/crypto/pubkey.h), so this
+# file is the trust root for auto-update on every installed copy of FulDC++. It cannot be rotated
+# without abandoning existing installs -- a leak is permanent.
+#
+# The real control is that the key lives OUTSIDE this repository (see README, "One-time: create
+# the FulDC++ signing key"). These patterns are only a backstop for the case where a copy is
+# generated or dropped in the working tree by mistake.
+air_rsa
+air_rsa.*
+*.pem
+*.key
+*.der
+*.pfx
+*.p12
+
+# Signing/build scratch
+*.log
+Thumbs.db
+.DS_Store

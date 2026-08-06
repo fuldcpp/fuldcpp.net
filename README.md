@@ -12,10 +12,24 @@ assets/                                                     css + logo/favicon
 download/   FulDC-<ver>-x64.zip                             fresh-install package
 update/     version.xml  version.xml.sign                   updater manifest + signature
 update/updater/ updater_x64_<ver>.zip                       self-update payload
+update/beta/ update/nightly/                                legacy channels - see below
 .nojekyll                                                   serve files verbatim
 .gitattributes                                              keep version.xml LF-exact
+.gitignore                                                  keeps the signing key out
 CNAME                                                       custom domain
 ```
+
+### `update/beta/` and `update/nightly/` — do not delete
+
+There is only one real channel. These two directories hold byte-identical copies of the stable
+manifest and signature, and the client no longer has an update-channel setting (it was removed
+because choosing beta or nightly silently kept you on stable anyway).
+
+They must stay published regardless. Clients built before that change still read their saved
+`UPDATE_CHANNEL` and request `update/beta/version.xml` or `update/nightly/version.xml`; if those
+404, the version check just fails with a logged warning and those installs stop being offered
+updates **permanently and silently**. Refresh the copies whenever you publish a stable release —
+same two files, copied verbatim, signature included.
 
 ## First-time setup
 
@@ -30,14 +44,21 @@ CNAME                                                       custom domain
 The updater only trusts a `version.xml` signed with the private key whose public half is baked
 into the client (`airdcpp/airdcpp/core/crypto/pubkey.h`). Do this once, keep `air_rsa` secret.
 
-1. Generate a 2048-bit RSA private key (PEM). The filename **must** be `air_rsa`:
+> **The key never lives in this repository.** This is a public GitHub Pages repo; a key generated
+> in the working tree is one `git add -A` away from being published, and it cannot be rotated
+> afterwards without abandoning every existing install. Keep it outside the checkout and pass an
+> absolute path to every command below. The working copy lives at `c:\airdc-ng\keys\air_rsa`;
+> `.gitignore` also lists the usual key patterns, but that is a backstop, not the control.
+
+1. Generate a 2048-bit RSA private key (PEM), outside the repo. The filename **must** be
+   `air_rsa`:
    ```
-   openssl genrsa -out air_rsa 2048
+   openssl genrsa -out c:\airdc-ng\keys\air_rsa 2048
    ```
 2. Use the client's own tooling to emit the matching `pubkey.h` (byte format must match exactly).
    Run any existing `FulDC.exe` once against the template version.xml:
    ```
-   FulDC.exe /sign update\version.xml air_rsa -pubout
+   FulDC.exe /sign update\version.xml c:\airdc-ng\keys\air_rsa -pubout
    ```
    → writes `pubkey.h` next to `version.xml`.
 3. Copy that `pubkey.h` over `airdcpp/airdcpp/core/crypto/pubkey.h` in the client source and
@@ -62,6 +83,11 @@ into the client (`airdcpp/airdcpp/core/crypto/pubkey.h`). Do this once, keep `ai
    ```
    This produces `updater_x64_<ver>.zip`, fills in `version.xml` (Build / VersionString / TTH /
    download URL), converts it to **LF** endings and signs it with `air_rsa` → `version.xml.sign`.
+
+   > `/createupdate` looks for the key at `<output-directory>\air_rsa` — it takes no key argument
+   > (`UpdaterCreator::createUpdate`). So copy `c:\airdc-ng\keys\air_rsa` into the **output
+   > directory** first, and delete it from there once the signature is generated. The output
+   > directory is a build folder; the key must never be copied into this repo, which is public.
 4. Commit the three generated files here:
    - `update/version.xml`  (overwrites the template — **must stay LF, byte-exact**)
    - `update/version.xml.sign`
