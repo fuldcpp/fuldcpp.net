@@ -45,26 +45,53 @@
         <div class="plugin">
           <div class="phead">
             <h2>Squiggle</h2>
-            <span class="pver">v2.4</span>
+            <span class="pver">v2.7</span>
           </div>
           <p class="pdesc">Spell checking in chat — a red wavy underline under misspelled words as you type, right-click for suggestions.</p>
           <div class="flist">
             <div class="frow"><span class="dot"></span><div><p>Several languages at once — a word counts as correct if any enabled language accepts it.</p></div></div>
             <div class="frow"><span class="dot"></span><div><p>Uses Windows' own spell checker, so there are no dictionaries to download and compounds and inflections are handled properly.</p></div></div>
+            <div class="frow"><span class="dot"></span><div><p>Catches a digit typed in place of a letter — the zero in "ab0nemang" — and suggests the word it was meant to be.</p></div></div>
             <div class="frow"><span class="dot"></span><div><p>Leaves links, magnets, hashes, file paths and the nicknames in the hub alone.</p></div></div>
-            <div class="frow"><span class="dot"></span><div><p>Optional autocorrect, a personal word list, and a settings dialog for the underline colour and thickness.</p></div></div>
+            <div class="frow"><span class="dot"></span><div><p>Optional autocorrect, a personal word list, and a settings dialog for the underline colour and thickness. Word lists live outside the plugin folder, so an update never clears them.</p></div></div>
           </div>
           <div class="pmeta">
             <span>by <b>kaje</b></span>
             <span><b>GPL v3</b></span>
             <span>plugin API <b>8</b></span>
             <span><b>64-bit</b></span>
-            <span><b>152 KB</b></span>
+            <span><b>166 KB</b></span>
           </div>
           <div class="pactions">
-            <a class="btn primary" href="https://github.com/fuldcpp/plugins/releases/download/squiggle-v2.4/Squiggle.dcext">Download <small>· .dcext</small></a>
-            <a class="btn ghost" href="https://github.com/fuldcpp/plugins/releases/tag/squiggle-v2.4">Release notes</a>
+            <a class="btn primary" href="https://github.com/fuldcpp/plugins/releases/download/squiggle-v2.7/Squiggle.dcext">Download <small>· .dcext</small></a>
+            <a class="btn ghost" href="https://github.com/fuldcpp/plugins/releases/tag/squiggle-v2.7">Release notes</a>
             <a class="btn ghost" href="https://github.com/fuldcpp/plugins/tree/main/squiggle">Source</a>
+          </div>
+        </div>
+
+        <div class="plugin">
+          <div class="phead">
+            <h2>Babelfish</h2>
+            <span class="pver">v1.0</span>
+          </div>
+          <p class="pdesc">Chat translation — write in your own language and send it in English. Ctrl+G in the message box translates and sends; plain Enter still sends exactly what you typed.</p>
+          <div class="flist">
+            <div class="frow"><span class="dot"></span><div><p>Works out of the box with no account and no API key, using MyMemory's free tier; or bring your own Azure, DeepL, Google or Claude key for those services.</p></div></div>
+            <div class="frow"><span class="dot"></span><div><p>Read someone else's line in your own language: click it in the chat and press Ctrl+G.</p></div></div>
+            <div class="frow"><span class="dot"></span><div><p>Per-hub automatic mode is off until you ask for it, and plain Enter is never touched, so nothing is sent to a translation service unless you choose it.</p></div></div>
+            <div class="frow"><span class="dot"></span><div><p>API keys are kept in Windows Credential Manager, never in a settings file. Nicknames are masked before a line leaves your machine.</p></div></div>
+          </div>
+          <div class="pmeta">
+            <span>by <b>kaje</b></span>
+            <span><b>GPL v3</b></span>
+            <span>plugin API <b>8</b></span>
+            <span><b>64-bit</b></span>
+            <span><b>249 KB</b></span>
+          </div>
+          <div class="pactions">
+            <a class="btn primary" href="https://github.com/fuldcpp/plugins/releases/download/babelfish-v1.0/Babelfish.dcext">Download <small>· .dcext</small></a>
+            <a class="btn ghost" href="https://github.com/fuldcpp/plugins/releases/tag/babelfish-v1.0">Release notes</a>
+            <a class="btn ghost" href="https://github.com/fuldcpp/plugins/tree/main/babelfish">Source</a>
           </div>
         </div>
 
