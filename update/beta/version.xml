@@ -6,4 +6,7 @@
 		<Title>FulDC++ Update</Title>
 		<Message>A new version of FulDC++ is available. See the changelog for details.</Message>
 	</VersionInfo>
+	<CrashReports Enabled="1">
+		<Url>https://crash.fuldcpp.net/v1/report</Url>
+	</CrashReports>
 </DCUpdate>
