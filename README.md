@@ -122,31 +122,10 @@ correct, a 404 means the tag or asset name is wrong.
 > The private key `air_rsa` is **never** committed. The matching public key is embedded in the
 > client (`airdcpp/airdcpp/core/crypto/pubkey.h`); only updates signed by `air_rsa` are trusted.
 
-## Publishing an extension release
+## Extension catalog
 
 Web extensions (the npm-style packages run by the web server) are catalogued in
-[fuldcpp/extensions](https://github.com/fuldcpp/extensions) and served from `extensions/` here:
-`catalog.json` (+ `.sign`), and `<name>/latest` + `<name>/index.json` per package. The tarballs
-themselves are release assets of that repository, pinned by hash in every document. The
-documents keep the npm registry's shapes, so the clients only changed address.
-
-1. In the extensions repo: store the package, run `scripts\build-catalog.ps1`, and publish the
-   tarball as a release **before** the catalog that points at it (its README has the details).
-2. Copy the generated `out\*` over `extensions\` here (the generator prunes removed packages
-   from `out`; mirror that by deleting the same directories).
-3. Sign the catalog with the release key and commit **catalog.json and catalog.json.sign in the
-   same commit** - a client that fetches one from a newer deploy than the other discards the
-   pair and falls back to its last verified copy:
-   ```
-   FulDC.exe /sign extensions\catalog.json c:\airdc-ng\keys\air_rsa
-   ```
-   The release build only; the debug build silently does nothing. `catalog.json` must stay
-   LF/no-BOM, byte-exact (`.gitattributes` covers it).
-4. Verify after pushing: `curl -s https://fuldcpp.net/extensions/catalog.json | file -` shows no
-   CRLF, and the Extensions window of a client lists the packages without a "could not be
-   verified" line. GitHub Pages caches for ten minutes.
-
-The native client verifies the signature and installs straight from the catalog's `dist`
-entry. The web UI and the auto-updater read the unsigned per-package documents over HTTPS and
-verify the tarball's SHA-1 - the same trust they had against npm. A Linux daemon needs a system
-CA bundle for these fetches (`ca-certificates`), as it already does for the GeoIP download.
+[fuldcpp/extensions](https://github.com/fuldcpp/extensions) and served from
+`https://extensions.fuldcpp.net/` by a Cloudflare Worker deployed from that repository - not
+from this site. Publishing steps live in that repository's README; nothing here changes when
+the catalog does.

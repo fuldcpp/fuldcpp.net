@@ -6,8 +6,3 @@ update/**/version.xml    -text
 plugins.json             -text
 *.sign                   binary
 *.zip                    binary
-# Extension catalog: the signature covers the exact LF bytes of catalog.json; the per-package
-# documents are generated with the same rule so a checkout never rewrites them.
-extensions/catalog.json  -text
-extensions/*/latest      -text
-extensions/*/index.json  -text
