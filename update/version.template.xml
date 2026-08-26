@@ -6,4 +6,11 @@
 		<Title>FulDC++ Update</Title>
 		<Message>A new version of FulDC++ is available. See the changelog for details.</Message>
 	</VersionInfo>
+	<Links>
+		<IPCheck>https://ip.fuldcpp.net/</IPCheck>
+		<IPCheck6>https://ip.fuldcpp.net/</IPCheck6>
+	</Links>
+	<CrashReports Enabled="1">
+		<Url>https://crash.fuldcpp.net/v1/report</Url>
+	</CrashReports>
 </DCUpdate>
