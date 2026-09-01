@@ -46,7 +46,7 @@
         <div class="plugin">
           <div class="phead">
             <h2>Release fixxer</h2>
-            <span class="pver">v1.2.0-beta</span>
+            <span class="pver">v1.2.5-beta</span>
           </div>
           <p class="pdesc">Scans downloaded and shared release directories for missing or extra files (CRC/SFV/NFO) and automatically redownloads whatever is broken or missing. A fork of the official release validator.</p>
           <div class="flist">
@@ -59,15 +59,15 @@
             <span><b>Node.js</b></span>
           </div>
           <div class="pactions">
-            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-release-fixxer-v1.2.0-beta">Release notes</a>
-            <a class="btn ghost" href="https://github.com/Sopor/airdcpp-extensions">Source</a>
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-release-fixxer-v1.2.5-beta">Release notes</a>
+            <a class="btn ghost" href="https://github.com/Sopor/airdcpp-extensions/tree/main/airdcpp-release-fixxer">Source</a>
           </div>
         </div>
 
         <div class="plugin">
           <div class="phead">
             <h2>Sample / proof checker</h2>
-            <span class="pver">v1.2.0-beta</span>
+            <span class="pver">v1.2.1-beta</span>
           </div>
           <p class="pdesc">Checks release folders for a missing Sample (with an mkv present) or Proof subfolder, and searches for and redownloads just that subfolder when it is needed.</p>
           <div class="flist">
@@ -80,15 +80,15 @@
             <span><b>Node.js</b></span>
           </div>
           <div class="pactions">
-            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-sample-proof-checker-v1.2.0-beta">Release notes</a>
-            <a class="btn ghost" href="https://github.com/Sopor/airdcpp-extensions">Source</a>
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-sample-proof-checker-v1.2.1-beta">Release notes</a>
+            <a class="btn ghost" href="https://github.com/Sopor/airdcpp-extensions/tree/main/airdcpp-sample-proof-checker">Source</a>
           </div>
         </div>
 
         <div class="plugin">
           <div class="phead">
             <h2>SFV folder checker</h2>
-            <span class="pver">v1.2.0-beta</span>
+            <span class="pver">v1.2.3-beta</span>
           </div>
           <p class="pdesc">Hub command <code>/sfvcheck &lt;folder&gt;</code> that recursively checks a folder for <code>.sfv</code> files and compares their CRC32 against the real files on disk.</p>
           <div class="flist">
@@ -101,20 +101,20 @@
             <span><b>Node.js</b></span>
           </div>
           <div class="pactions">
-            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-sfv-folder-checker-v1.2.0-beta">Release notes</a>
-            <a class="btn ghost" href="https://github.com/Sopor/airdcpp-extensions">Source</a>
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-sfv-folder-checker-v1.2.3-beta">Release notes</a>
+            <a class="btn ghost" href="https://github.com/Sopor/airdcpp-extensions/tree/main/airdcpp-sfv-folder-checker">Source</a>
           </div>
         </div>
 
         <div class="plugin">
           <div class="phead">
             <h2>Share backup</h2>
-            <span class="pver">v0.0.9-beta</span>
+            <span class="pver">v0.1.9-beta</span>
           </div>
-          <p class="pdesc">Hub command <code>/sharebackup [path]</code> that saves a self-verified, bzip2-compressed XML snapshot of your own share — folder and file names, sizes and TTH — to a local backup file, using the same naming AirDC++ uses for its own filelists.</p>
+          <p class="pdesc">Hub command <code>/sharebackup [path]</code> that saves a self-verified XML snapshot of your own share — folder and file names, sizes and TTH — to a local backup file, using the same naming AirDC++ uses for its own filelists. bzip2 compression is optional.</p>
           <div class="flist">
             <div class="frow"><span class="dot"></span><div><p>Reads real paths through the stateless Share API.</p></div></div>
-            <div class="frow"><span class="dot"></span><div><p>Can run automatically on chosen days, with cleanup of old backups.</p></div></div>
+            <div class="frow"><span class="dot"></span><div><p>Runs automatically on the weekdays you choose, deletes backups past a chosen age, and can skip virtual folders.</p></div></div>
           </div>
           <div class="pmeta">
             <span>by <b>ShareFixxers</b></span>
@@ -123,8 +123,31 @@
             <span><b>Node.js</b></span>
           </div>
           <div class="pactions">
-            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-share-backup-v0.0.9-beta">Release notes</a>
-            <a class="btn ghost" href="https://github.com/Sopor/airdcpp-extensions">Source</a>
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-share-backup-v0.1.9-beta">Release notes</a>
+            <a class="btn ghost" href="https://github.com/Sopor/airdcpp-extensions/tree/main/airdcpp-share-backup">Source</a>
+          </div>
+        </div>
+
+
+        <div class="plugin">
+          <div class="phead">
+            <h2>Tiny fileserver</h2>
+            <span class="pver">v0.0.11-beta</span>
+          </div>
+          <p class="pdesc">Serves the <code>.tgz</code> extension tarballs in a folder on your own machine over a small local web server, so &ldquo;Install extensions from URL&hellip;&rdquo; can be pointed at that folder instead of a remote host.</p>
+          <div class="flist">
+            <div class="frow"><span class="dot"></span><div><p>Listens on 127.0.0.1 only until you add an address yourself, and serves nothing but <code>.tgz</code> files under the folder you choose.</p></div></div>
+            <div class="frow"><span class="dot"></span><div><p>Stays off until you set that folder. Can optionally install or update from it on a timer.</p></div></div>
+          </div>
+          <div class="pmeta">
+            <span>by <b>ShareFixxers</b></span>
+            <span><b>MIT</b></span>
+            <span>API level <b>any</b></span>
+            <span><b>Node.js</b></span>
+          </div>
+          <div class="pactions">
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-tiny-fileserver-v0.0.11-beta">Release notes</a>
+            <a class="btn ghost" href="https://github.com/Sopor/airdcpp-extensions/tree/main/airdcpp-tiny-fileserver">Source</a>
           </div>
         </div>
 
