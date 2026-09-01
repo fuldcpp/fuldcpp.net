@@ -9,6 +9,10 @@
 	<Links>
 		<IPCheck>https://ip.fuldcpp.net/</IPCheck>
 		<IPCheck6>https://ip.fuldcpp.net/</IPCheck6>
+		<ExtensionCatalog>https://extensions.fuldcpp.net/catalog.json</ExtensionCatalog>
+		<ExtensionCatalogSign>https://extensions.fuldcpp.net/catalog.json.sign</ExtensionCatalogSign>
+		<ExtensionPackage>https://extensions.fuldcpp.net/</ExtensionPackage>
+		<ExtensionHomepage>https://github.com/fuldcpp/extensions/tree/main/packages/</ExtensionHomepage>
 	</Links>
 	<CrashReports Enabled="1">
 		<Url>https://crash.fuldcpp.net/v1/report</Url>
