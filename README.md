@@ -98,7 +98,8 @@ into the client (`airdcpp/airdcpp/core/crypto/pubkey.h`). Do this once, keep `ai
    > `country_ip_db.mmdb`, logs) in the download ZIP.** A running client populates `Settings`
    > with a **unique per-user TLS private key** and personal config — shipping it leaks that key
    > to everyone and gives all users the same identity. The download must contain ONLY:
-   > `FulDC.exe`, `FulDC.pdb` (the stripped one), `Node.js`, `Themes`, `Web-resources`, `EmoPacks`.
+   > `FulDC.exe`, `FulDC.pdb` (the stripped one), `Node.js`, `Themes`, `Web-resources`, `EmoPacks`,
+   > `Language` (the translations; an empty one means the staging script did not copy them).
    > Build it from the compiled output but copy those items explicitly — do **not** copy the whole
    > `compiled/.../windows/` folder (it contains build junk + any test-run `Settings`).
 5. After pushing, verify: `curl https://fuldcpp.net/update/version.xml | file -` shows no CRLF; the
