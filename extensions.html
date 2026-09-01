@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extensions — FulDC++</title>
+<meta name="description" content="Web extensions for FulDC++ — install them from the client's Extensions window. Release checkers, share tools, chat commands and more.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs>
+        <radialGradient id="o1" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#bcd2ff"/><stop offset="45%" stop-color="#6c7bff"/><stop offset="100%" stop-color="#3a3ad6"/></radialGradient>
+        <radialGradient id="o2" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#d9c2ff"/><stop offset="45%" stop-color="#9a6cff"/><stop offset="100%" stop-color="#5a2fd6"/></radialGradient>
+        <radialGradient id="o3" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#bff0ff"/><stop offset="45%" stop-color="#4fc3ff"/><stop offset="100%" stop-color="#1f7fd6"/></radialGradient>
+      </defs>
+      <ellipse cx="32" cy="34" rx="27" ry="12" fill="none" stroke="#6c7bff" stroke-width="2" opacity=".5" transform="rotate(-18 32 34)"/>
+      <circle cx="20" cy="30" r="9" fill="url(#o1)"/>
+      <circle cx="32" cy="36" r="10" fill="url(#o3)"/>
+      <circle cx="45" cy="28" r="8" fill="url(#o2)"/>
+    </svg>
+    <span>FulDC<span class="plus">++</span></span>
+    </a>
+    <span class="spacer"></span>
+    <a class="link" href="index.html">Home</a>
+    <a class="link" href="features.html">Features</a>
+    <a class="link" href="plugins.html">Plugins</a>
+    <a class="link active" href="extensions.html">Extensions</a>
+    <a class="link" href="changelog.html">Changelog</a>
+    <a class="btn primary cta" href="download.html">Download</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section>
+      <h1 class="section-title">Extensions</h1>
+      <p class="section-sub">Web extensions for FulDC++, run by the built-in web server on the bundled Node.js. The client installs them for you: open Extensions → pick one → Install.</p>
+
+      <div class="plugins">
+
+        <div class="plugin">
+          <div class="phead">
+            <h2>Release fixxer</h2>
+            <span class="pver">v1.2.0-beta</span>
+          </div>
+          <p class="pdesc">Scans downloaded and shared release directories for missing or extra files (CRC/SFV/NFO) and automatically redownloads whatever is broken or missing. A fork of the official release validator.</p>
+          <div class="flist">
+            <div class="frow"><span class="dot"></span><div><p>Works alongside the SFV folder checker and the sample/proof checker below.</p></div></div>
+          </div>
+          <div class="pmeta">
+            <span>by <b>ShareFixxers</b></span>
+            <span><b>MIT</b></span>
+            <span>API level <b>4+</b></span>
+            <span><b>Node.js</b></span>
+          </div>
+          <div class="pactions">
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-release-fixxer-v1.2.0-beta">Release notes</a>
+            <a class="btn ghost" href="https://github.com/Sopor/airdcpp-extensions">Source</a>
+          </div>
+        </div>
+
+        <div class="plugin">
+          <div class="phead">
+            <h2>Sample / proof checker</h2>
+            <span class="pver">v1.2.0-beta</span>
+          </div>
+          <p class="pdesc">Checks release folders for a missing Sample (with an mkv present) or Proof subfolder, and searches for and redownloads just that subfolder when it is needed.</p>
+          <div class="flist">
+            <div class="frow"><span class="dot"></span><div><p>Only the missing subfolder is fetched, not the whole release.</p></div></div>
+          </div>
+          <div class="pmeta">
+            <span>by <b>ShareFixxers</b></span>
+            <span><b>MIT</b></span>
+            <span>API level <b>4+</b></span>
+            <span><b>Node.js</b></span>
+          </div>
+          <div class="pactions">
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-sample-proof-checker-v1.2.0-beta">Release notes</a>
+            <a class="btn ghost" href="https://github.com/Sopor/airdcpp-extensions">Source</a>
+          </div>
+        </div>
+
+        <div class="plugin">
+          <div class="phead">
+            <h2>SFV folder checker</h2>
+            <span class="pver">v1.2.0-beta</span>
+          </div>
+          <p class="pdesc">Hub command <code>/sfvcheck &lt;folder&gt;</code> that recursively checks a folder for <code>.sfv</code> files and compares their CRC32 against the real files on disk.</p>
+          <div class="flist">
+            <div class="frow"><span class="dot"></span><div><p>Works together with the release fixxer.</p></div></div>
+          </div>
+          <div class="pmeta">
+            <span>by <b>ShareFixxers</b></span>
+            <span><b>MIT</b></span>
+            <span>API level <b>0+</b></span>
+            <span><b>Node.js</b></span>
+          </div>
+          <div class="pactions">
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-sfv-folder-checker-v1.2.0-beta">Release notes</a>
+            <a class="btn ghost" href="https://github.com/Sopor/airdcpp-extensions">Source</a>
+          </div>
+        </div>
+
+        <div class="plugin">
+          <div class="phead">
+            <h2>Share backup</h2>
+            <span class="pver">v0.0.9-beta</span>
+          </div>
+          <p class="pdesc">Hub command <code>/sharebackup [path]</code> that saves a self-verified, bzip2-compressed XML snapshot of your own share — folder and file names, sizes and TTH — to a local backup file, using the same naming AirDC++ uses for its own filelists.</p>
+          <div class="flist">
+            <div class="frow"><span class="dot"></span><div><p>Reads real paths through the stateless Share API.</p></div></div>
+            <div class="frow"><span class="dot"></span><div><p>Can run automatically on chosen days, with cleanup of old backups.</p></div></div>
+          </div>
+          <div class="pmeta">
+            <span>by <b>ShareFixxers</b></span>
+            <span><b>MIT</b></span>
+            <span>API level <b>9+</b></span>
+            <span><b>Node.js</b></span>
+          </div>
+          <div class="pactions">
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-share-backup-v0.0.9-beta">Release notes</a>
+            <a class="btn ghost" href="https://github.com/Sopor/airdcpp-extensions">Source</a>
+          </div>
+        </div>
+
+
+        <h2 class="section-title" style="font-size:1.15rem;margin:2rem 0 .5rem">From the AirDC++ community</h2>
+        <p class="section-sub" style="margin-bottom:1rem">Not ours. Written and published on npm by the AirDC++ community, and mirrored here so FulDC++ can install them for you from the same signed catalogue.</p>
+
+        <div class="plugin">
+          <div class="phead">
+            <h2>Release validator</h2>
+            <span class="pver">v1.4.0</span>
+          </div>
+          <p class="pdesc">Scan downloaded and shared release directories for missing or extra files.</p>
+          <div class="flist">
+            <div class="frow"><span class="dot"></span><div><p>Published on npm by <b>maksis</b>, mirrored for FulDC++ so it can be installed from the client.</p></div></div>
+          </div>
+          <div class="pmeta">
+            <span>by <b>maksis</b></span>
+            <span><b>MIT</b></span>
+            <span>API level <b>4+</b></span>
+            <span><b>Node.js</b></span>
+          </div>
+          <div class="pactions">
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-release-validator-v1.4.0">Release notes</a>
+            <a class="btn ghost" href="https://github.com/airdcpp-web/airdcpp-release-validator">Source</a>
+          </div>
+        </div>
+
+        <div class="plugin">
+          <div class="phead">
+            <h2>Share monitor</h2>
+            <span class="pver">v1.2.0</span>
+          </div>
+          <p class="pdesc">Real-time share monitoring.</p>
+          <div class="flist">
+            <div class="frow"><span class="dot"></span><div><p>Published on npm by <b>maksis</b>, mirrored for FulDC++ so it can be installed from the client.</p></div></div>
+          </div>
+          <div class="pmeta">
+            <span>by <b>maksis</b></span>
+            <span><b>MIT</b></span>
+            <span>API level <b>6+</b></span>
+            <span><b>Node.js</b></span>
+          </div>
+          <div class="pactions">
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-share-monitor-v1.2.0">Release notes</a>
+            <a class="btn ghost" href="https://github.com/airdcpp-web/airdcpp-share-monitor">Source</a>
+          </div>
+        </div>
+
+        <div class="plugin">
+          <div class="phead">
+            <h2>Search sites</h2>
+            <span class="pver">v1.2.0</span>
+          </div>
+          <p class="pdesc">Adds configurable context-menu items that perform web searches for files and directories.</p>
+          <div class="flist">
+            <div class="frow"><span class="dot"></span><div><p>Published on npm by <b>maksis</b>, mirrored for FulDC++ so it can be installed from the client.</p></div></div>
+          </div>
+          <div class="pmeta">
+            <span>by <b>maksis</b></span>
+            <span><b>MIT</b></span>
+            <span>API level <b>5+</b></span>
+            <span><b>Node.js</b></span>
+          </div>
+          <div class="pactions">
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-search-sites-v1.2.0">Release notes</a>
+            <a class="btn ghost" href="https://github.com/maksis/airdcpp-search-sites">Source</a>
+          </div>
+        </div>
+
+        <div class="plugin">
+          <div class="phead">
+            <h2>Message emailer</h2>
+            <span class="pver">v1.0.5</span>
+          </div>
+          <p class="pdesc">Sends email summaries with your unread hub and private messages.</p>
+          <div class="flist">
+            <div class="frow"><span class="dot"></span><div><p>Published on npm by <b>maksis</b>, mirrored for FulDC++ so it can be installed from the client.</p></div></div>
+          </div>
+          <div class="pmeta">
+            <span>by <b>maksis</b></span>
+            <span><b>MIT</b></span>
+            <span>API level <b>0+</b></span>
+            <span><b>Node.js</b></span>
+          </div>
+          <div class="pactions">
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-message-emailer-v1.0.5">Release notes</a>
+            <a class="btn ghost" href="https://github.com/maksis/airdcpp-message-emailer">Source</a>
+          </div>
+        </div>
+
+        <div class="plugin">
+          <div class="phead">
+            <h2>User commands</h2>
+            <span class="pver">v2.2.2</span>
+          </div>
+          <p class="pdesc">Run commands from chat to output information or trigger actions. Type <code>/help</code> for the full list.</p>
+          <div class="flist">
+            <div class="frow"><span class="dot"></span><div><p>Published on npm by <b>peps1</b>, mirrored for FulDC++ so it can be installed from the client.</p></div></div>
+          </div>
+          <div class="pmeta">
+            <span>by <b>peps1</b></span>
+            <span><b>MIT</b></span>
+            <span>API level <b>0+</b></span>
+            <span><b>Node.js</b></span>
+          </div>
+          <div class="pactions">
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-user-commands-v2.2.2">Release notes</a>
+            <a class="btn ghost" href="https://github.com/peps1/airdcpp-user-commands">Source</a>
+          </div>
+        </div>
+
+        <div class="plugin">
+          <div class="phead">
+            <h2>Advanced sharing</h2>
+            <span class="pver">v1.0.0</span>
+          </div>
+          <p class="pdesc">Advanced sharing options, with batch hashing that can be stopped or resumed.</p>
+          <div class="flist">
+            <div class="frow"><span class="dot"></span><div><p>Published on npm by <b>peps1</b>, mirrored for FulDC++ so it can be installed from the client.</p></div></div>
+          </div>
+          <div class="pmeta">
+            <span>by <b>peps1</b></span>
+            <span><b>MIT</b></span>
+            <span>API level <b>5+</b></span>
+            <span><b>Node.js</b></span>
+          </div>
+          <div class="pactions">
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-advanced-sharing-v1.0.0">Release notes</a>
+            <a class="btn ghost" href="https://github.com/peps1/airdcpp-advanced-sharing">Source</a>
+          </div>
+        </div>
+
+        <div class="plugin">
+          <div class="phead">
+            <h2>Auto downloader</h2>
+            <span class="pver">v1.0.0-beta.13</span>
+          </div>
+          <p class="pdesc">Add search terms that are searched at intervals and downloaded automatically when found.</p>
+          <div class="flist">
+            <div class="frow"><span class="dot"></span><div><p>Beta. Published on npm by <b>peps1</b>, mirrored for FulDC++ so it can be installed from the client.</p></div></div>
+          </div>
+          <div class="pmeta">
+            <span>by <b>peps1</b></span>
+            <span><b>MIT</b></span>
+            <span>API level <b>0+</b></span>
+            <span><b>Node.js</b></span>
+          </div>
+          <div class="pactions">
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-auto-downloader-v1.0.0-beta.13">Release notes</a>
+            <a class="btn ghost" href="https://github.com/peps1/airdcpp-auto-downloader">Source</a>
+          </div>
+        </div>
+
+        <div class="plugin">
+          <div class="phead">
+            <h2>Runscript</h2>
+            <span class="pver">v1.2.13</span>
+          </div>
+          <p class="pdesc">Execute scripts on airdcpp-api events and hooks, or on a cron schedule.</p>
+          <div class="flist">
+            <div class="frow"><span class="dot"></span><div><p>Published on npm by <b>zersetz-end</b>, mirrored for FulDC++ so it can be installed from the client.</p></div></div>
+          </div>
+          <div class="pmeta">
+            <span>by <b>zersetz-end</b></span>
+            <span><b>MIT</b></span>
+            <span>API level <b>0+</b></span>
+            <span><b>Node.js</b></span>
+          </div>
+          <div class="pactions">
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-runscript-extension-v1.2.13">Release notes</a>
+            <a class="btn ghost" href="https://github.com/zersetz-end/airdcpp-runscript-extension">Source</a>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="note">
+        <strong>Installing.</strong> Open <b>Extensions</b> in FulDC++ (the toolbar, or the View menu), pick one and press <b>Install</b> — the client fetches this list itself from the signed catalogue at <a href="https://extensions.fuldcpp.net/">extensions.fuldcpp.net</a> and checks each download against it. The web interface installs them too, under Settings → Extensions. Extensions run on the Node.js runtime that ships with FulDC++, so there is nothing else to install.
+      </div>
+    </section>
+
+    <section class="devsec">
+      <div class="devnote">
+        <div class="subhead">Writing an extension</div>
+        <p>Extensions are Node.js packages built on the AirDC++ extension API — the same API this client runs — so an extension written for AirDC++ works here unchanged. The <a href="https://airdcpp-web.github.io/docs/advanced/scripting.html">scripting guide</a> covers the API, and the catalogue repository below holds the packages and the tooling that turns them into the documents the client reads.</p>
+        <p style="text-align:center;margin:22px 0 0">
+          <a class="btn ghost" href="https://github.com/fuldcpp/extensions">Extensions on GitHub</a>
+        </p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap cols">
+    <div class="attrib">
+      <strong>FulDC++</strong> by Sulan &amp; Lansh, 2026.<br>
+      Based on AirDC++ © 2007–2024 Night and maksis · StrongDC++ © 2004–2011 Big Muscle.
+    </div>
+    <div>
+      <a href="index.html">Home</a> · <a href="features.html">Features</a> · <a href="plugins.html">Plugins</a> · <a href="extensions.html">Extensions</a> · <a href="download.html">Download</a> · <a href="changelog.html">Changelog</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
