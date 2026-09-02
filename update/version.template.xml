@@ -7,6 +7,8 @@
 		<Message>A new version of FulDC++ is available. See the changelog for details.</Message>
 	</VersionInfo>
 	<Links>
+		<Guides>https://fuldcpp.net/guide/</Guides>
+		<WebServerHelp>https://fuldcpp.net/guide/web-ui.html</WebServerHelp>
 		<IPCheck>https://ip.fuldcpp.net/</IPCheck>
 		<IPCheck6>https://ip.fuldcpp.net/</IPCheck6>
 		<ExtensionCatalog>https://extensions.fuldcpp.net/catalog.json</ExtensionCatalog>

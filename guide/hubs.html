@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hubs and chat — FulDC++ guide</title>
+<meta name="description" content="Finding hubs, favourites, hub chat, private messages and chat commands in FulDC++.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/guide.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="../index.html">
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs>
+        <radialGradient id="o1" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#bcd2ff"/><stop offset="45%" stop-color="#6c7bff"/><stop offset="100%" stop-color="#3a3ad6"/></radialGradient>
+        <radialGradient id="o2" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#d9c2ff"/><stop offset="45%" stop-color="#9a6cff"/><stop offset="100%" stop-color="#5a2fd6"/></radialGradient>
+        <radialGradient id="o3" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#bff0ff"/><stop offset="45%" stop-color="#4fc3ff"/><stop offset="100%" stop-color="#1f7fd6"/></radialGradient>
+      </defs>
+      <ellipse cx="32" cy="34" rx="27" ry="12" fill="none" stroke="#6c7bff" stroke-width="2" opacity=".5" transform="rotate(-18 32 34)"/>
+      <circle cx="20" cy="30" r="9" fill="url(#o1)"/>
+      <circle cx="32" cy="36" r="10" fill="url(#o3)"/>
+      <circle cx="45" cy="28" r="8" fill="url(#o2)"/>
+    </svg>
+    <span>FulDC<span class="plus">++</span></span>
+    </a>
+    <span class="spacer"></span>
+    <a class="link" href="../index.html">Home</a>
+    <a class="link" href="../features.html">Features</a>
+    <a class="link active" href="index.html">Guide</a>
+    <a class="link" href="../plugins.html">Plugins</a>
+    <a class="link" href="../extensions.html">Extensions</a>
+    <a class="link" href="../changelog.html">Changelog</a>
+    <a class="btn primary cta" href="../download.html">Download</a>
+  </div>
+</header>
+
+<main>
+  <div class="gdoc">
+<nav class="gside">
+  <div class="subhead">Guide</div>
+  <a href="index.html">Overview</a>
+  <a href="getting-started.html">Getting started</a>
+  <a href="interface.html">The main window</a>
+  <a href="hubs.html" class="on">Hubs & chat</a>
+  <a href="search.html">Searching</a>
+  <a href="downloading.html">Downloading</a>
+  <a href="sharing.html">Sharing</a>
+  <a href="settings.html">Settings tour</a>
+  <a href="fuldc-features.html">FulDC++ extras</a>
+  <a href="web-ui.html">Remote & web UI</a>
+  <a href="troubleshooting.html">Troubleshooting</a>
+</nav>
+
+<article class="gmain">
+<h1>Hubs &amp; chat</h1>
+<p class="lede">Finding hubs, keeping the good ones, and everything that happens in a hub window.</p>
+
+<h2>Finding hubs</h2>
+
+<h3>Public hubs</h3>
+
+<p><span class="path">View &rarr; Public hubs</span> shows the hubs published on public hub lists:
+name, description, address, users, share size and minimum share. Start typing in the filter box
+(<kbd>Ctrl</kbd>+<kbd>F</kbd>) to narrow it down. Double-click connects; right-click adds to
+favourites or copies the address.</p>
+
+<p>You can configure several hub lists and switch between them from the drop-down.
+<strong>FulDC++ only:</strong> two extra entries sit in that list &mdash;
+<strong>Merge all</strong> (<kbd>Alt</kbd>+<kbd>M</kbd>) combines every configured list into one view
+with duplicates removed, and <strong>Discovered from users</strong> collects hub recommendations
+from the users you are already connected to, which is how you find the hubs that never publish
+themselves.</p>
+
+<h3>Recent hubs</h3>
+
+<p><span class="path">View &rarr; Recent hubs</span> is a history of hubs, private chats and file
+lists you have opened, so you can get back to something you did not think to bookmark.</p>
+
+<h3>Favorite hubs</h3>
+
+<p><span class="path">View &rarr; Favorite hubs</span> is your own curated list, and it is where the
+per-hub settings live. Right-click a favourite and choose <strong>Properties</strong> to set:</p>
+
+<div class="flist">
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Identity</h3>
+    <p>A nick, password, e-mail and description used only on this hub. Handy when one community
+    knows you by a different name, or when a hub needs a registered account.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Share profile</h3>
+    <p>Which of your <a href="sharing.html">share profiles</a> this hub sees. This is how you share
+    one set of folders with one community and a different set with another.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Connect automatically</h3>
+    <p>Join this hub when FulDC++ starts. <span class="path">File &rarr; Connect to favorite
+    hubs</span> triggers the same thing on demand.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Appearance</h3>
+    <p>Which side the user list sits on, and a chat background image for this hub only.</p>
+  </div></div>
+</div>
+
+<p>Favourites can be sorted into <strong>groups</strong>, which the Window menu then uses for bulk
+actions like &ldquo;close all hubs not in this group&rdquo;.</p>
+
+<h2>The hub window</h2>
+
+<p>A hub tab is chat on one side and the user list on the other, with the hub's topic across the
+top. The input box is at the bottom.</p>
+
+<figure class="shot">
+  <img src="img/hub-window.png" alt="A FulDC++ hub window showing chat on the left and the user list on the right.">
+  <figcaption>A hub: topic bar, chat, user list, and the formatting row above the input box.</figcaption>
+</figure>
+
+<h3>The user list</h3>
+
+<p>Every user on the hub, with their share size, connection, tag and country. Sort by any column,
+and use the filter box to find someone by name. Double-click a user to browse their file list.
+Right-click for the full menu: send a private message, get the file list, match your queue against
+their share, grant an extra upload slot, add to favourites, ignore, or copy details.</p>
+
+<p>Operators and bots are marked with their own icons, and the list can be
+<strong>grouped by type</strong> so ops and bots sit at the top &mdash; toggle that with
+<code>/groupusers</code>.</p>
+
+<h3>Chatting</h3>
+
+<p>Type and press <kbd>Enter</kbd>. Nicks autocomplete with <kbd>Tab</kbd>. Links, magnet links and
+hub addresses in chat are clickable; a magnet link adds the file to your queue, and a hub address
+opens that hub. Typing <kbd>/</kbd> pops up a list of commands filtered as you type.</p>
+
+<p>You can find text in the chat history (<kbd>Ctrl</kbd>+<kbd>F</kbd>), clear the display with
+<code>/clear</code>, and open the hub's chat log with <code>/log</code>. Join and leave messages are
+noisy on big hubs &mdash; <code>/showjoins</code> turns them off for the current hub.</p>
+
+<p>FulDC++ adds a formatting bar above the input box, emoticon packs, GIF search and rich text
+messages; those are covered in <a href="fuldc-features.html">FulDC++ extras</a>.</p>
+
+<h2>Private messages</h2>
+
+<p>Double-click a user, or right-click &rarr; <strong>Send private message</strong>, to open a PM
+tab. On ADC hubs a PM can travel two ways: through the hub, or over a
+<strong>direct encrypted connection</strong> between the two clients (CCPM), which keeps the hub
+operators out of the conversation. FulDC++ sets this up on its own when both sides support it;
+<code>/direct</code> forces it and <code>/encrypted</code> reports what you are actually using.</p>
+
+<div class="note">
+  A PM tab shows whether the connection is direct and encrypted. If it matters that a conversation
+  is not readable by the hub, check that before you type &mdash; a hub-routed PM passes through the
+  hub in the clear as far as the operators are concerned.
+</div>
+
+<h2>Chat commands</h2>
+
+<p>Commands start with <kbd>/</kbd>. Type <code>/help</code> in any chat for the list that applies
+to that window; an autocomplete popup appears as soon as you type the slash.</p>
+
+<h3>Anywhere</h3>
+
+<table>
+  <thead><tr><th>Command</th><th>Does</th></tr></thead>
+  <tbody>
+    <tr><td>/me &lt;message&gt;</td><td>Send an action message.</td></tr>
+    <tr><td>/clear</td><td>Clear the chat display.</td></tr>
+    <tr><td>/away [message]</td><td>Toggle away mode, optionally with a message.</td></tr>
+    <tr><td>/search &lt;text&gt;</td><td>Open a search window for that text.</td></tr>
+    <tr><td>/slots &lt;n&gt;</td><td>Set your number of upload slots.</td></tr>
+    <tr><td>/extraslots &lt;n&gt;</td><td>Set extra slots.</td></tr>
+    <tr><td>/refresh</td><td>Refresh your share.</td></tr>
+    <tr><td>/ratio</td><td>Post your share ratio to the chat.</td></tr>
+    <tr><td>/stats</td><td>Post system and client statistics to the chat.</td></tr>
+    <tr><td>/speed</td><td>Show current transfer speeds.</td></tr>
+    <tr><td>/info</td><td>Show system information.</td></tr>
+    <tr><td>/df</td><td>Show disk space.</td></tr>
+    <tr><td>/uptime</td><td>Post your uptime.</td></tr>
+    <tr><td>/connection</td><td>Show your connection settings, IP and ports.</td></tr>
+    <tr><td>/whois &lt;ip&gt;</td><td>Look up an IP address.</td></tr>
+    <tr><td>/log [system|downloads|uploads]</td><td>Open a log file.</td></tr>
+    <tr><td>/gif [search]</td><td>Find a GIF to send. <strong>FulDC++ only.</strong></td></tr>
+    <tr><td>/editor, /md</td><td>Open the markdown editor. <strong>FulDC++ only.</strong></td></tr>
+    <tr><td>/optimizedb, /verifydb</td><td>Clean up or verify the hash database.</td></tr>
+    <tr><td>/shutdown</td><td>Toggle shutting the computer down when transfers finish.</td></tr>
+  </tbody>
+</table>
+
+<h3>In a hub window</h3>
+
+<table>
+  <thead><tr><th>Command</th><th>Does</th></tr></thead>
+  <tbody>
+    <tr><td>/join &lt;hub&gt;</td><td>Connect to another hub.</td></tr>
+    <tr><td>/favorite, /removefavorite</td><td>Add or remove this hub from favourites.</td></tr>
+    <tr><td>/password &lt;password&gt;</td><td>Send the hub password when asked for one.</td></tr>
+    <tr><td>/nick &lt;nick&gt;</td><td>Change your nick on this hub (NMDC hubs that support it).</td></tr>
+    <tr><td>/getlist &lt;nick&gt;</td><td>Download a user's file list.</td></tr>
+    <tr><td>/pm &lt;nick&gt;</td><td>Open a private message.</td></tr>
+    <tr><td>/mcto &lt;nick&gt; &lt;msg&gt;</td><td>Send a private message that appears in the user's main chat.</td></tr>
+    <tr><td>/topic, /ctopic</td><td>Show the hub topic, or open the link in it.</td></tr>
+    <tr><td>/userlist</td><td>Show or hide the user list.</td></tr>
+    <tr><td>/showjoins, /favshowjoins</td><td>Toggle join and leave messages.</td></tr>
+    <tr><td>/groupusers</td><td>Group the user list by type (op, bot, user).</td></tr>
+    <tr><td>/allow</td><td>Accept an untrusted TLS certificate after a keyprint mismatch.</td></tr>
+    <tr><td>/close</td><td>Close the hub tab.</td></tr>
+  </tbody>
+</table>
+
+<h3>In a private message</h3>
+
+<table>
+  <thead><tr><th>Command</th><th>Does</th></tr></thead>
+  <tbody>
+    <tr><td>/grant</td><td>Give this user an extra upload slot for ten minutes.</td></tr>
+    <tr><td>/getlist</td><td>Download their file list.</td></tr>
+    <tr><td>/favorite</td><td>Add them to favourites.</td></tr>
+    <tr><td>/direct</td><td>Force a direct encrypted connection.</td></tr>
+    <tr><td>/encrypted</td><td>Report the encryption state of this chat.</td></tr>
+    <tr><td>/disconnect</td><td>Drop the direct connection.</td></tr>
+    <tr><td>/close</td><td>Close the tab.</td></tr>
+  </tbody>
+</table>
+
+<p>Media player commands (<code>/wmp</code>, <code>/itunes</code>, <code>/mpc</code>,
+<code>/fb</code>, <code>/w</code>, <code>/s</code>) post what you are currently playing. Hubs may
+add their own commands on top of these &mdash; those come from the hub, not the client, and are
+usually listed in the hub's own help.</p>
+
+<div class="gnav">
+  <a class="pv" href="interface.html">&larr; The main window</a>
+  <a class="nx" href="search.html">Searching &rarr;</a>
+</div>
+</article>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap cols">
+    <div class="attrib">
+      <strong>FulDC++</strong> by Sulan &amp; Lansh, 2026.<br>
+      Based on AirDC++ © 2007–2024 Night and maksis · StrongDC++ © 2004–2011 Big Muscle.
+    </div>
+    <div>
+      <a href="../index.html">Home</a> · <a href="../features.html">Features</a> · <a href="index.html">Guide</a> · <a href="../plugins.html">Plugins</a> · <a href="../extensions.html">Extensions</a> · <a href="../download.html">Download</a> · <a href="../changelog.html">Changelog</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

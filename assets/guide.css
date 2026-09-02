@@ -1,0 +1,159 @@
+/* FulDC++ guide — sidebar, prose and figures. Layers on top of style.css; the palette,
+   buttons, .note, .flist/.frow and .subhead all come from there. */
+
+.gdoc {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 22px;
+  display: grid;
+  grid-template-columns: 224px minmax(0, 1fr);
+  gap: 46px;
+  align-items: start;
+}
+
+/* ---- chapter sidebar ---- */
+.gside {
+  position: sticky;
+  top: 84px;
+  padding: 22px 0 40px;
+}
+.gside .subhead { margin: 0 0 10px; }
+.gside a {
+  display: block;
+  padding: 7px 12px;
+  margin-bottom: 2px;
+  border-radius: 8px;
+  color: var(--text-dim);
+  font-size: .93rem;
+  border-left: 2px solid transparent;
+}
+.gside a:hover { color: var(--text); background: var(--bg-elev); text-decoration: none; }
+.gside a.on {
+  color: var(--text);
+  background: var(--bg-card);
+  border-left-color: var(--accent);
+  font-weight: 600;
+}
+
+/* ---- article ---- */
+/* min-width:0 lets the grid column shrink; break-word keeps long literals such as
+   %LocalAppData%\FulDC++ from widening the page on a narrow screen. */
+.gmain { padding: 22px 0 10px; min-width: 0; overflow-wrap: break-word; }
+.gmain h1 { font-size: 2.1rem; margin-bottom: 10px; }
+.gmain .lede { font-size: 1.08rem; color: var(--text-dim); margin-bottom: 6px; }
+.gmain h2 {
+  font-size: 1.35rem;
+  margin: 44px 0 12px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+.gmain h3 { font-size: 1.05rem; margin: 26px 0 8px; }
+.gmain ul, .gmain ol { color: var(--text-dim); padding-left: 22px; margin: 0 0 1em; }
+.gmain li { margin-bottom: 6px; }
+.gmain li > strong { color: var(--text); }
+.gmain .flist { margin-bottom: 20px; }
+
+/* numbered walkthroughs */
+ol.steps { counter-reset: step; list-style: none; padding-left: 0; }
+ol.steps > li {
+  position: relative;
+  padding: 0 0 2px 44px;
+  margin-bottom: 16px;
+}
+ol.steps > li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute; left: 0; top: -1px;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: .85rem; font-weight: 700; color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+}
+
+/* ---- screenshots ---- */
+figure.shot { margin: 22px 0 26px; }
+figure.shot img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  background: var(--bg-elev);
+}
+figure.shot figcaption {
+  margin-top: 9px;
+  font-size: .85rem;
+  color: var(--text-faint);
+}
+
+/* ---- menu paths and keys ---- */
+/* Deliberately NOT white-space:nowrap: a long route such as
+   "Settings -> Connection settings -> Limits & advanced" cannot fit on a phone, and
+   refusing to wrap it makes the whole document scroll sideways. */
+.path { color: var(--text); font-weight: 600; }
+kbd {
+  font-family: Consolas, "SF Mono", Menlo, monospace;
+  font-size: .82em;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  padding: 1px 6px;
+  color: var(--text);
+}
+
+/* ---- chapter cards on the guide landing page ---- */
+.chapters .card { display: block; }
+.chapters .card h3 { color: var(--text); }
+.chapters .card .num {
+  font-size: .78rem; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--accent-3); display: block; margin-bottom: 4px;
+}
+
+/* ---- prev / next ---- */
+.gnav {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  margin: 52px 0 10px; padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+.gnav a { color: var(--text-dim); font-size: .93rem; }
+.gnav a:hover { color: var(--text); }
+.gnav .nx { margin-left: auto; text-align: right; }
+
+/* ---- tables (settings reference) ---- */
+.gmain table {
+  width: 100%; border-collapse: collapse; margin: 0 0 22px;
+  font-size: .92rem;
+}
+.gmain th, .gmain td {
+  text-align: left; padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-dim); vertical-align: top;
+}
+.gmain th { color: var(--text); font-size: .8rem; letter-spacing: 1px; text-transform: uppercase; }
+.gmain td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+
+@media (max-width: 900px) {
+  .gdoc { grid-template-columns: 1fr; gap: 0; }
+  .gside {
+    position: static;
+    padding: 18px 0 4px;
+    display: flex; gap: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-bottom: 1px solid var(--border);
+  }
+  .gside .subhead { display: none; }
+  .gside a {
+    flex: 0 0 auto;
+    margin: 0 0 12px;
+    border: 1px solid var(--border);
+    border-left-width: 1px;
+    border-radius: 999px;
+    white-space: nowrap;
+    font-size: .88rem;
+  }
+  .gside a.on { border-color: var(--accent); }
+  .gmain table { display: block; overflow-x: auto; }
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FulDC++ guide</title>
+<meta name="description" content="How to use FulDC++ and what every part of the client does — the complete user guide.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/guide.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="../index.html">
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs>
+        <radialGradient id="o1" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#bcd2ff"/><stop offset="45%" stop-color="#6c7bff"/><stop offset="100%" stop-color="#3a3ad6"/></radialGradient>
+        <radialGradient id="o2" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#d9c2ff"/><stop offset="45%" stop-color="#9a6cff"/><stop offset="100%" stop-color="#5a2fd6"/></radialGradient>
+        <radialGradient id="o3" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#bff0ff"/><stop offset="45%" stop-color="#4fc3ff"/><stop offset="100%" stop-color="#1f7fd6"/></radialGradient>
+      </defs>
+      <ellipse cx="32" cy="34" rx="27" ry="12" fill="none" stroke="#6c7bff" stroke-width="2" opacity=".5" transform="rotate(-18 32 34)"/>
+      <circle cx="20" cy="30" r="9" fill="url(#o1)"/>
+      <circle cx="32" cy="36" r="10" fill="url(#o3)"/>
+      <circle cx="45" cy="28" r="8" fill="url(#o2)"/>
+    </svg>
+    <span>FulDC<span class="plus">++</span></span>
+    </a>
+    <span class="spacer"></span>
+    <a class="link" href="../index.html">Home</a>
+    <a class="link" href="../features.html">Features</a>
+    <a class="link active" href="index.html">Guide</a>
+    <a class="link" href="../plugins.html">Plugins</a>
+    <a class="link" href="../extensions.html">Extensions</a>
+    <a class="link" href="../changelog.html">Changelog</a>
+    <a class="btn primary cta" href="../download.html">Download</a>
+  </div>
+</header>
+
+<main>
+  <div class="gdoc">
+<nav class="gside">
+  <div class="subhead">Guide</div>
+  <a href="index.html" class="on">Overview</a>
+  <a href="getting-started.html">Getting started</a>
+  <a href="interface.html">The main window</a>
+  <a href="hubs.html">Hubs & chat</a>
+  <a href="search.html">Searching</a>
+  <a href="downloading.html">Downloading</a>
+  <a href="sharing.html">Sharing</a>
+  <a href="settings.html">Settings tour</a>
+  <a href="fuldc-features.html">FulDC++ extras</a>
+  <a href="web-ui.html">Remote & web UI</a>
+  <a href="troubleshooting.html">Troubleshooting</a>
+</nav>
+
+<article class="gmain">
+<h1>FulDC++ guide</h1>
+<p class="lede">How to use FulDC++, and what every part of the client actually does.</p>
+
+<p>FulDC++ is a <strong>direct connect</strong> client for Windows. Direct connect is a file-sharing
+network built around <em>hubs</em>: a hub is a chat room with a file index attached. You join a hub,
+you share some folders, and you can search everyone else on that hub and download straight from
+them &mdash; no central server holds the files, and there are no trackers or torrents involved.</p>
+
+<p>If you have used AirDC++, StrongDC++ or DC++ before, everything here will look familiar; FulDC++
+is built on the AirDC++ core and adds a true dark theme, rich-text chat, an in-client browser and a
+pile of quality-of-life features. If you have never used a direct connect client at all, start at
+<a href="getting-started.html">Getting started</a> and read straight through &mdash; the first four
+chapters are enough to be up and downloading.</p>
+
+<div class="note">
+  <strong>In a hurry?</strong> Install, run the setup wizard, open
+  <span class="path">View &rarr; Public hubs</span>, double-click a hub, then press
+  <kbd>Ctrl</kbd>+<kbd>S</kbd> to search. That is the whole thing in one line; the rest of this
+  guide explains the parts.
+</div>
+
+<h2>Chapters</h2>
+
+<div class="grid chapters">
+
+  <a class="card" href="getting-started.html">
+    <span class="num">Chapter 1</span>
+    <h3>Getting started</h3>
+    <p>Downloading and installing, portable versus installed, the eight-page setup wizard, and
+    connecting to your first hub.</p>
+  </a>
+
+  <a class="card" href="interface.html">
+    <span class="num">Chapter 2</span>
+    <h3>The main window</h3>
+    <p>The menu bar, the toolbar buttons, tabs, the transfer pane at the bottom and every panel in
+    the status bar.</p>
+  </a>
+
+  <a class="card" href="hubs.html">
+    <span class="num">Chapter 3</span>
+    <h3>Hubs &amp; chat</h3>
+    <p>Finding hubs, favourites and groups, hub chat, the user list, private messages and the full
+    list of chat commands.</p>
+  </a>
+
+  <a class="card" href="search.html">
+    <span class="num">Chapter 4</span>
+    <h3>Searching</h3>
+    <p>Searching every hub at once, filters and search types, plus auto search, ADL search and the
+    search spy.</p>
+  </a>
+
+  <a class="card" href="downloading.html">
+    <span class="num">Chapter 5</span>
+    <h3>Downloading</h3>
+    <p>The download queue, bundles, priorities, finding more sources, browsing someone's file list
+    and scanning finished downloads.</p>
+  </a>
+
+  <a class="card" href="sharing.html">
+    <span class="num">Chapter 6</span>
+    <h3>Sharing</h3>
+    <p>Choosing what to share, share profiles, hashing, upload slots and how other people see your
+    files.</p>
+  </a>
+
+  <a class="card" href="settings.html">
+    <span class="num">Chapter 7</span>
+    <h3>Settings tour</h3>
+    <p>Every category and page in the settings dialog, in the order you meet them, and what the
+    options there change.</p>
+  </a>
+
+  <a class="card" href="fuldc-features.html">
+    <span class="num">Chapter 8</span>
+    <h3>FulDC++ extras</h3>
+    <p>The parts you will not find in other clients: rich text chat, attachments, the browser tab,
+    dark mode, auto-recovery, backups and more.</p>
+  </a>
+
+  <a class="card" href="web-ui.html">
+    <span class="num">Chapter 9</span>
+    <h3>Remote &amp; web UI</h3>
+    <p>Turning on the web server so you can drive FulDC++ from a browser, a phone or another
+    computer &mdash; and the extensions that run on it.</p>
+  </a>
+
+  <a class="card" href="troubleshooting.html">
+    <span class="num">Chapter 10</span>
+    <h3>Troubleshooting</h3>
+    <p>Slow or dead downloads, ports and passive mode, encryption, hashing, logs, and what to do
+    after a crash.</p>
+  </a>
+
+</div>
+
+<h2>Conventions used here</h2>
+
+<div class="flist">
+  <div class="frow"><div class="dot"></div><div>
+    <h3><span class="path">File &rarr; Settings</span></h3>
+    <p>A path in bold like this is a menu route: open the <em>File</em> menu, then choose
+    <em>Settings</em>. Settings pages are written the same way, for example
+    <span class="path">Settings &rarr; Sharing &rarr; Hashing</span>.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3><kbd>Ctrl</kbd>+<kbd>S</kbd></h3>
+    <p>Keys to press. Where a shortcut exists it is given next to the menu route.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>FulDC++ only</h3>
+    <p>Features marked this way do not exist in AirDC++ or DC++ &mdash; they are specific to
+    FulDC++, which is usually why they are not documented anywhere else.</p>
+  </div></div>
+</div>
+
+<div class="note">
+  This guide describes FulDC++ on Windows 10 and 11. Something missing or wrong? The
+  <a href="https://github.com/fuldcpp/community/discussions">community discussions</a> are the place
+  to say so.
+</div>
+
+<div class="gnav">
+  <a class="nx" href="getting-started.html">Getting started &rarr;</a>
+</div>
+</article>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap cols">
+    <div class="attrib">
+      <strong>FulDC++</strong> by Sulan &amp; Lansh, 2026.<br>
+      Based on AirDC++ © 2007–2024 Night and maksis · StrongDC++ © 2004–2011 Big Muscle.
+    </div>
+    <div>
+      <a href="../index.html">Home</a> · <a href="../features.html">Features</a> · <a href="index.html">Guide</a> · <a href="../plugins.html">Plugins</a> · <a href="../extensions.html">Extensions</a> · <a href="../download.html">Download</a> · <a href="../changelog.html">Changelog</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

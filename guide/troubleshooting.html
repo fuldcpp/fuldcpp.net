@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Troubleshooting — FulDC++ guide</title>
+<meta name="description" content="Ports, passive mode, TLS, hashing, logs and crash reports when something goes wrong.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/guide.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="../index.html">
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs>
+        <radialGradient id="o1" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#bcd2ff"/><stop offset="45%" stop-color="#6c7bff"/><stop offset="100%" stop-color="#3a3ad6"/></radialGradient>
+        <radialGradient id="o2" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#d9c2ff"/><stop offset="45%" stop-color="#9a6cff"/><stop offset="100%" stop-color="#5a2fd6"/></radialGradient>
+        <radialGradient id="o3" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#bff0ff"/><stop offset="45%" stop-color="#4fc3ff"/><stop offset="100%" stop-color="#1f7fd6"/></radialGradient>
+      </defs>
+      <ellipse cx="32" cy="34" rx="27" ry="12" fill="none" stroke="#6c7bff" stroke-width="2" opacity=".5" transform="rotate(-18 32 34)"/>
+      <circle cx="20" cy="30" r="9" fill="url(#o1)"/>
+      <circle cx="32" cy="36" r="10" fill="url(#o3)"/>
+      <circle cx="45" cy="28" r="8" fill="url(#o2)"/>
+    </svg>
+    <span>FulDC<span class="plus">++</span></span>
+    </a>
+    <span class="spacer"></span>
+    <a class="link" href="../index.html">Home</a>
+    <a class="link" href="../features.html">Features</a>
+    <a class="link active" href="index.html">Guide</a>
+    <a class="link" href="../plugins.html">Plugins</a>
+    <a class="link" href="../extensions.html">Extensions</a>
+    <a class="link" href="../changelog.html">Changelog</a>
+    <a class="btn primary cta" href="../download.html">Download</a>
+  </div>
+</header>
+
+<main>
+  <div class="gdoc">
+<nav class="gside">
+  <div class="subhead">Guide</div>
+  <a href="index.html">Overview</a>
+  <a href="getting-started.html">Getting started</a>
+  <a href="interface.html">The main window</a>
+  <a href="hubs.html">Hubs & chat</a>
+  <a href="search.html">Searching</a>
+  <a href="downloading.html">Downloading</a>
+  <a href="sharing.html">Sharing</a>
+  <a href="settings.html">Settings tour</a>
+  <a href="fuldc-features.html">FulDC++ extras</a>
+  <a href="web-ui.html">Remote & web UI</a>
+  <a href="troubleshooting.html" class="on">Troubleshooting</a>
+</nav>
+
+<article class="gmain">
+<h1>Troubleshooting</h1>
+<p class="lede">The handful of things that actually go wrong, and what to do about them.</p>
+
+<h2>Active and passive mode</h2>
+
+<p>This is the cause of most &ldquo;nothing downloads&rdquo; problems, so it is worth understanding
+once.</p>
+
+<p>In <strong>active mode</strong> other users can open a connection to you. In
+<strong>passive mode</strong> they cannot, so you have to open the connection to them. That works
+fine &mdash; except when <em>both</em> sides are passive, in which case no connection is possible at
+all and the transfer simply never starts. A passive client can only reach active ones, which on a
+typical hub is a minority of users.</p>
+
+<p>Symptoms of being stuck passive: searches return few results, downloads sit at
+&ldquo;Connecting&rdquo; forever, and nobody ever downloads from you.</p>
+
+<h3>Getting into active mode</h3>
+
+<ol class="steps">
+  <li>Open <span class="path">Settings &rarr; Connection settings</span> and run the automatic connectivity
+  detection. It will try UPnP on your router and configure ports for you.</li>
+  <li>If that fails, set the TCP, UDP and TLS ports manually and forward those same ports to your
+  computer in your router's configuration.</li>
+  <li>Allow FulDC++ through Windows Firewall &mdash; both the private and public profiles if you are
+  unsure.</li>
+  <li>Reconnect to a hub and check the system log; FulDC++ reports the connectivity state it ended
+  up with.</li>
+</ol>
+
+<p><code>/connection</code> in any chat prints your current mode, external IP and ports, which is
+the quickest way to confirm what you have.</p>
+
+<div class="note">
+  Behind carrier-grade NAT, a mobile connection or a VPN without port forwarding, active mode may
+  simply not be available. Passive still works &mdash; you will just see fewer sources. A VPN
+  provider that offers port forwarding solves it properly.
+</div>
+
+<h2>Downloads that will not move</h2>
+
+<div class="flist">
+  <div class="frow"><div class="dot"></div><div>
+    <h3>&ldquo;No slots available&rdquo;</h3>
+    <p>Not an error. The user is busy and you are queued. Add more sources: right-click the download
+    and choose <strong>Search for alternates</strong>.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Stuck at &ldquo;Connecting&rdquo;</h3>
+    <p>Usually the passive-to-passive problem above, or the user has gone offline. Find another
+    source.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>&ldquo;File not available&rdquo;</h3>
+    <p>They have moved or deleted it and not refreshed their share. Remove that source.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Everything is slow</h3>
+    <p>Check you have not left a speed limit set in <span class="path">Settings &rarr; Connection settings
+    &rarr; Limits &amp; advanced</span>, and that <strong>Pause all downloads</strong> is not
+    active on the toolbar.</p>
+  </div></div>
+</div>
+
+<h2>Hub problems</h2>
+
+<div class="flist">
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Nick taken</h3>
+    <p>Someone else is using it, or you are already connected. Set a different nick for that hub in
+    its favourite properties, or use <code>/nick</code> on NMDC hubs that allow it.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Kicked for share size</h3>
+    <p>The hub has a minimum share. Add folders and refresh, then reconnect.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Certificate or keyprint mismatch</h3>
+    <p>The hub's TLS certificate is not the one FulDC++ remembers. That can mean the hub genuinely
+    changed its certificate &mdash; or that something is intercepting the connection. If you have
+    reason to believe it is legitimate, <code>/allow</code> accepts it for this connection. Do not
+    make a habit of it.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Hub keeps redirecting</h3>
+    <p><span class="path">File &rarr; Follow last redirect</span> takes you where it wants you to go.
+    Automatic redirect following is a setting in <span class="path">Settings &rarr;
+    Advanced</span>.</p>
+  </div></div>
+</div>
+
+<h2>Sharing and hashing</h2>
+
+<p>A first refresh of a large share takes a long time &mdash; every file has to be hashed. Watch it
+in <span class="path">View &rarr; Hashing progress</span>. If it seems too slow, or is making the
+machine unusable, the speed limits are in
+<span class="path">Settings &rarr; Sharing &rarr; Hashing</span>.</p>
+
+<p>If your share size looks wrong, or files you know you have are not being found, run
+<span class="path">File &rarr; Refresh file list</span>. If it still looks wrong, the hash database
+may need attention: <code>/optimizedb</code> removes unused entries and <code>/verifydb</code>
+checks its integrity. Both report progress to the system log.</p>
+
+<h2>Encryption</h2>
+
+<p>Prefer <code>adcs://</code> hubs, which are encrypted. Transfer encryption is configured in
+<span class="path">Settings &rarr; Advanced &rarr; Encryption</span>; the LAN user profile may turn
+it off, which is fine on a local network and a bad idea anywhere else. If you picked LAN during the
+wizard and are now on public hubs, check that page.</p>
+
+<h2>When something crashes</h2>
+
+<p>FulDC++ can restart itself after a crash or a hang &mdash; see
+<span class="path">Settings &rarr; Advanced &rarr; Auto-Recovery</span>. After an unclean shutdown
+it offers to repair the hash database or restore a backup before it loads anything, so take that
+prompt seriously rather than clicking past it.</p>
+
+<p>If crash reporting is enabled you can send a report; you control whether the system log is
+included. Reports are useful &mdash; they are usually the only way a bug that only happens on your
+machine ever gets fixed.</p>
+
+<h2>Finding out what happened</h2>
+
+<div class="flist">
+  <div class="frow"><div class="dot"></div><div>
+    <h3>System log</h3>
+    <p><span class="path">View &rarr; System log</span>, or click the leftmost status bar panel.
+    Connection problems, port bind failures, refresh results and update checks all report here
+    first. Start here.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Log files</h3>
+    <p><span class="path">File &rarr; Open log directory</span>, or <code>/log system</code>,
+    <code>/log downloads</code>, <code>/log uploads</code>.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Protocol debug</h3>
+    <p><span class="path">View &rarr; Protocol debug</span> shows the raw conversation with hubs and
+    users. Verbose, but decisive when a hub is behaving oddly.</p>
+  </div></div>
+</div>
+
+<h2>Where your data lives</h2>
+
+<p>Settings, favourites, the queue and logs are in <code>Documents\FulDC++</code>; caches and the
+hash database are in <code>%LocalAppData%\FulDC++</code>. Neither is inside the program folder, so
+you can replace the program with a newer version freely.</p>
+
+<p>To start completely fresh, close FulDC++ and <em>rename</em> <code>Documents\FulDC++</code>
+rather than deleting it &mdash; if it turns out you wanted something from it, it is still there.</p>
+
+<div class="note">
+  Still stuck? The <a href="https://github.com/fuldcpp/community/discussions">community
+  discussions</a> are the place to ask, and the right place to report a bug. Include what the system
+  log said &mdash; it is almost always the deciding detail.
+</div>
+
+<div class="gnav">
+  <a class="pv" href="web-ui.html">&larr; Remote & web UI</a>
+</div>
+</article>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap cols">
+    <div class="attrib">
+      <strong>FulDC++</strong> by Sulan &amp; Lansh, 2026.<br>
+      Based on AirDC++ © 2007–2024 Night and maksis · StrongDC++ © 2004–2011 Big Muscle.
+    </div>
+    <div>
+      <a href="../index.html">Home</a> · <a href="../features.html">Features</a> · <a href="index.html">Guide</a> · <a href="../plugins.html">Plugins</a> · <a href="../extensions.html">Extensions</a> · <a href="../download.html">Download</a> · <a href="../changelog.html">Changelog</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

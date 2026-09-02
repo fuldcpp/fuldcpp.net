@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The main window — FulDC++ guide</title>
+<meta name="description" content="The menu bar, toolbars, tabs, transfer pane and status bar of FulDC++, explained.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/guide.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="../index.html">
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs>
+        <radialGradient id="o1" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#bcd2ff"/><stop offset="45%" stop-color="#6c7bff"/><stop offset="100%" stop-color="#3a3ad6"/></radialGradient>
+        <radialGradient id="o2" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#d9c2ff"/><stop offset="45%" stop-color="#9a6cff"/><stop offset="100%" stop-color="#5a2fd6"/></radialGradient>
+        <radialGradient id="o3" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#bff0ff"/><stop offset="45%" stop-color="#4fc3ff"/><stop offset="100%" stop-color="#1f7fd6"/></radialGradient>
+      </defs>
+      <ellipse cx="32" cy="34" rx="27" ry="12" fill="none" stroke="#6c7bff" stroke-width="2" opacity=".5" transform="rotate(-18 32 34)"/>
+      <circle cx="20" cy="30" r="9" fill="url(#o1)"/>
+      <circle cx="32" cy="36" r="10" fill="url(#o3)"/>
+      <circle cx="45" cy="28" r="8" fill="url(#o2)"/>
+    </svg>
+    <span>FulDC<span class="plus">++</span></span>
+    </a>
+    <span class="spacer"></span>
+    <a class="link" href="../index.html">Home</a>
+    <a class="link" href="../features.html">Features</a>
+    <a class="link active" href="index.html">Guide</a>
+    <a class="link" href="../plugins.html">Plugins</a>
+    <a class="link" href="../extensions.html">Extensions</a>
+    <a class="link" href="../changelog.html">Changelog</a>
+    <a class="btn primary cta" href="../download.html">Download</a>
+  </div>
+</header>
+
+<main>
+  <div class="gdoc">
+<nav class="gside">
+  <div class="subhead">Guide</div>
+  <a href="index.html">Overview</a>
+  <a href="getting-started.html">Getting started</a>
+  <a href="interface.html" class="on">The main window</a>
+  <a href="hubs.html">Hubs & chat</a>
+  <a href="search.html">Searching</a>
+  <a href="downloading.html">Downloading</a>
+  <a href="sharing.html">Sharing</a>
+  <a href="settings.html">Settings tour</a>
+  <a href="fuldc-features.html">FulDC++ extras</a>
+  <a href="web-ui.html">Remote & web UI</a>
+  <a href="troubleshooting.html">Troubleshooting</a>
+</nav>
+
+<article class="gmain">
+<h1>The main window</h1>
+<p class="lede">Every part of the FulDC++ window, from the menu bar down to the status bar.</p>
+
+<p>FulDC++ is a tabbed application. One frame holds the menu bar and toolbars at the top, a strip of
+tabs, whatever window you have open in the middle, a transfer pane docked along the bottom, and a
+status bar. Hubs, searches, file lists and every tool window all open as tabs in that one frame.</p>
+
+<figure class="shot">
+  <img src="img/main-window.png" alt="The FulDC++ main window with the toolbar, a hub tab, the transfer pane and the status bar.">
+  <figcaption>The main window: toolbar, tab strip, an open hub, the transfer pane at the bottom and
+  the status bar.</figcaption>
+</figure>
+
+<h2>The menu bar</h2>
+
+<div class="flist">
+  <div class="frow"><div class="dot"></div><div>
+    <h3>File</h3>
+    <p>Opening and matching file lists, refreshing your share, and the shortcuts to your downloads,
+    log and settings folders. Also <strong>Quick connect</strong>, <strong>Connect to favorite
+    hubs</strong>, <strong>Reconnect</strong> and <strong>Follow last redirect</strong>; the
+    <strong>Setup wizard</strong>; <strong>Settings</strong>; <strong>Create backup now</strong>;
+    <strong>Get TTH of file</strong>; and <strong>Check for updates</strong>.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>View</h3>
+    <p>Opens every tool window &mdash; public, recent and favourite hubs, favourite users, search,
+    ADL search, search spy, auto search, extensions, protocol debug, notepad, system log, RSS feeds,
+    streaming, the web browser and the hashing progress dialog. The bottom of the menu toggles the
+    interface pieces themselves: toolbar, status bar, transfer view, media toolbar, the toolbar
+    progress bar, and <strong>Lock toolbars</strong>.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Transfers</h3>
+    <p>The <strong>Download queue</strong>, the <strong>Upload queue</strong> (users waiting for a
+    slot) and <strong>Finished uploads</strong>.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Window</h3>
+    <p>Tab and window management: cascade, tile, minimise or restore everything, sort tabs. Then a
+    large set of bulk-close commands &mdash; close all hubs, all PMs, all offline PMs, all file
+    lists, all searches, all viewed files, everything disconnected or idle, everything in or not in
+    a favourite hub group. Also <strong>Reconnect disconnected</strong>, <strong>Mark as
+    read</strong>, <strong>Duplicate tab</strong>, <strong>Toggle tab notifications</strong> and
+    <strong>Clean all main chats</strong>.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Help</h3>
+    <p><strong>About</strong>, plus links to the homepage, these guides, the discussion forum and
+    the bug tracker.</p>
+  </div></div>
+</div>
+
+<h2>The main toolbar</h2>
+
+<p>Twenty-five buttons, grouped by separators. Buttons that open a tool window are toggles &mdash;
+press again to close it. Hovering any button shows its name.</p>
+
+<table>
+  <thead><tr><th>Group</th><th>Buttons</th></tr></thead>
+  <tbody>
+    <tr><td>Hubs</td><td>Public hubs &middot; Reconnect &middot; Disconnect &middot; Follow redirect
+      &middot; Favorite hubs &middot; Favorite users &middot; Recent hubs</td></tr>
+    <tr><td>Transfers</td><td>Download queue &middot; Upload queue &middot; Finished uploads</td></tr>
+    <tr><td>Finding</td><td>Search &middot; ADL search &middot; Search spy &middot; Auto search</td></tr>
+    <tr><td>Tools</td><td>Notepad &middot; System log &middot; Refresh file list &middot;
+      Extensions &middot; Open file list &middot; Open downloads folder</td></tr>
+    <tr><td>Status</td><td>Away &middot; Settings &middot; RSS &middot; Pause all downloads &middot;
+      Plugins</td></tr>
+  </tbody>
+</table>
+
+<p>Several buttons carry a drop-down arrow with extra choices: <strong>Public hubs</strong> lists
+your hubs to connect to, <strong>Open file list</strong> lists recently opened lists,
+<strong>Favorite hubs</strong> drops down your favourites, and <strong>Pause all downloads</strong>
+exposes the speed limiter.</p>
+
+<h3>Customising it</h3>
+
+<p><strong>FulDC++ only.</strong> Right-click the toolbar for
+<strong>Customize toolbar&hellip;</strong> (add, remove and reorder buttons; you can also
+<kbd>Shift</kbd>-drag buttons directly), <strong>Reset to default</strong>, and a
+<strong>Shortcuts</strong> submenu that puts buttons for your own programs on the toolbar. The same
+menu toggles the toolbar, its progress bar and the toolbar lock. Icon size and icon packs live in
+<span class="path">Settings &rarr; Appearance &rarr; Toolbar</span> and apply immediately.</p>
+
+<h3>The media toolbar</h3>
+
+<p>A second, optional toolbar (<span class="path">View &rarr; Media toolbar</span>) controls your
+music player: start, back, play, pause, next, stop and three volume steps, plus a button that posts
+what you are listening to into the current chat. Choose the player &mdash; Winamp, iTunes, Media
+Player Classic, Windows Media Player, Spotify or foobar2000 &mdash; in
+<span class="path">Settings &rarr; Advanced &rarr; Miscellaneous</span>.</p>
+
+<h2>Tabs</h2>
+
+<p>Every window you open becomes a tab. Tabs colour themselves when something happens in them, so an
+unread hub message or a finished search is visible without switching. Middle-click closes a tab;
+right-click gives per-tab actions. Whether the strip sits at the top or the bottom, how wide tabs
+get and how they group is configured in
+<span class="path">Settings &rarr; Appearance &rarr; Tabs</span>.</p>
+
+<p>FulDC++ also supports <strong>Windows taskbar tabs</strong>, so open hubs can appear as separate
+thumbnails when you hover the taskbar icon.</p>
+
+<h2>The transfer pane</h2>
+
+<p>Docked along the bottom of the window (toggle it with
+<span class="path">View &rarr; Transfer view</span>), this is the live view of everything moving
+right now &mdash; one row per connection, grouped under the bundle it belongs to, with a progress
+bar, speed, and the user and hub on the other end. Right-click a row to force an attempt, remove
+the source, send a private message or open the user's file list.</p>
+
+<p><strong>FulDC++ only:</strong> the client's own HTTP downloads appear here too &mdash; update
+checks, hub lists, the GeoIP database, RSS fetches &mdash; so a stalled background download is
+visible instead of invisible. Those rows have their own right-click menu with
+<strong>Copy URL</strong> and <strong>Remove</strong>.</p>
+
+<h2>The status bar</h2>
+
+<p>Fourteen panels, left to right. Any of them except the log line and the shutdown timer can be
+hidden &mdash; right-click the status bar to choose.</p>
+
+<table>
+  <thead><tr><th>Panel</th><th>Shows</th></tr></thead>
+  <tbody>
+    <tr><td>Last line</td><td>The most recent system log message. Click it to open the system log.</td></tr>
+    <tr><td>Away</td><td>Whether away mode is on.</td></tr>
+    <tr><td>Shared</td><td>The total size of your share.</td></tr>
+    <tr><td>Shared files</td><td>How many files that is.</td></tr>
+    <tr><td>Hubs</td><td>How many hubs you are connected to.</td></tr>
+    <tr><td>Fav users</td><td>How many of your favourite users are online.</td></tr>
+    <tr><td>Slots</td><td>Free upload slots out of the total.</td></tr>
+    <tr><td>Downloaded / Uploaded</td><td>Session totals.</td></tr>
+    <tr><td>DL / UL speed</td><td>Current combined transfer speeds.</td></tr>
+    <tr><td>Queued</td><td>The total size still waiting in the download queue.</td></tr>
+    <tr><td>Refresh status</td><td>Share refresh and hashing progress.</td></tr>
+    <tr><td>Shutdown</td><td>The countdown, when a timed shutdown is armed.</td></tr>
+  </tbody>
+</table>
+
+<h2>The tray icon</h2>
+
+<p>FulDC++ can minimise to the notification area. Right-click the tray icon for show/hide, the
+downloads folder, a share refresh, the speed limiter, About, restart and exit. Whether closing or
+minimising the window sends it to the tray is set in
+<span class="path">Settings &rarr; Appearance</span>.</p>
+
+<div class="note">
+  Almost every list in FulDC++ behaves the same way: right-click the column headers to choose which
+  columns are shown, drag to reorder them, and click a header to sort. If a list looks like it is
+  missing information, the column is probably just switched off.
+</div>
+
+<div class="gnav">
+  <a class="pv" href="getting-started.html">&larr; Getting started</a>
+  <a class="nx" href="hubs.html">Hubs & chat &rarr;</a>
+</div>
+</article>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap cols">
+    <div class="attrib">
+      <strong>FulDC++</strong> by Sulan &amp; Lansh, 2026.<br>
+      Based on AirDC++ © 2007–2024 Night and maksis · StrongDC++ © 2004–2011 Big Muscle.
+    </div>
+    <div>
+      <a href="../index.html">Home</a> · <a href="../features.html">Features</a> · <a href="index.html">Guide</a> · <a href="../plugins.html">Plugins</a> · <a href="../extensions.html">Extensions</a> · <a href="../download.html">Download</a> · <a href="../changelog.html">Changelog</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

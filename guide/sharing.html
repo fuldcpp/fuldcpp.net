@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sharing — FulDC++ guide</title>
+<meta name="description" content="Sharing folders, share profiles, hashing and upload slots in FulDC++.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/guide.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="../index.html">
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs>
+        <radialGradient id="o1" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#bcd2ff"/><stop offset="45%" stop-color="#6c7bff"/><stop offset="100%" stop-color="#3a3ad6"/></radialGradient>
+        <radialGradient id="o2" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#d9c2ff"/><stop offset="45%" stop-color="#9a6cff"/><stop offset="100%" stop-color="#5a2fd6"/></radialGradient>
+        <radialGradient id="o3" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#bff0ff"/><stop offset="45%" stop-color="#4fc3ff"/><stop offset="100%" stop-color="#1f7fd6"/></radialGradient>
+      </defs>
+      <ellipse cx="32" cy="34" rx="27" ry="12" fill="none" stroke="#6c7bff" stroke-width="2" opacity=".5" transform="rotate(-18 32 34)"/>
+      <circle cx="20" cy="30" r="9" fill="url(#o1)"/>
+      <circle cx="32" cy="36" r="10" fill="url(#o3)"/>
+      <circle cx="45" cy="28" r="8" fill="url(#o2)"/>
+    </svg>
+    <span>FulDC<span class="plus">++</span></span>
+    </a>
+    <span class="spacer"></span>
+    <a class="link" href="../index.html">Home</a>
+    <a class="link" href="../features.html">Features</a>
+    <a class="link active" href="index.html">Guide</a>
+    <a class="link" href="../plugins.html">Plugins</a>
+    <a class="link" href="../extensions.html">Extensions</a>
+    <a class="link" href="../changelog.html">Changelog</a>
+    <a class="btn primary cta" href="../download.html">Download</a>
+  </div>
+</header>
+
+<main>
+  <div class="gdoc">
+<nav class="gside">
+  <div class="subhead">Guide</div>
+  <a href="index.html">Overview</a>
+  <a href="getting-started.html">Getting started</a>
+  <a href="interface.html">The main window</a>
+  <a href="hubs.html">Hubs & chat</a>
+  <a href="search.html">Searching</a>
+  <a href="downloading.html">Downloading</a>
+  <a href="sharing.html" class="on">Sharing</a>
+  <a href="settings.html">Settings tour</a>
+  <a href="fuldc-features.html">FulDC++ extras</a>
+  <a href="web-ui.html">Remote & web UI</a>
+  <a href="troubleshooting.html">Troubleshooting</a>
+</nav>
+
+<article class="gmain">
+<h1>Sharing</h1>
+<p class="lede">What you give back, and who gets to see it.</p>
+
+<p>Sharing is not optional politeness in direct connect &mdash; most hubs require a minimum share
+before they let you in, and check it on connect. This chapter covers choosing folders, hashing,
+profiles and slots.</p>
+
+<h2>Choosing what to share</h2>
+
+<p><span class="path">Settings &rarr; Sharing</span> lists your shared folders. Add a folder, give it
+a <strong>virtual name</strong> &mdash; that is the name other people see, so a folder at
+<code>D:\media\stuff\music</code> can simply appear as <em>Music</em> &mdash; and it becomes part of
+your share.</p>
+
+<figure class="shot">
+  <img src="img/settings-sharing.png" alt="The FulDC++ sharing settings page listing shared folders and profiles.">
+  <figcaption>Shared folders, their virtual names, and the profile selector at the top.</figcaption>
+</figure>
+
+<p>A few things worth setting while you are here:</p>
+
+<ul>
+  <li><strong>Skiplist</strong> &mdash; patterns that are never shared. Use it to keep
+  <code>.nfo</code> clutter, partial files, thumbnails and anything private out of the index. The
+  RAR user profile installs a comprehensive one for you.</li>
+  <li><strong>Share hidden / system files</strong> &mdash; off by default, and best left that way.</li>
+  <li><strong>Follow symbolic links</strong> &mdash; be careful; a link loop can make your share
+  enormous.</li>
+</ul>
+
+<div class="note">
+  Everything in a shared folder is visible and downloadable by everyone on the hubs that see that
+  profile, including subfolders you forgot were in there. Check what you are adding before you add
+  it &mdash; this is the single most common mistake new users make.
+</div>
+
+<h2>Hashing</h2>
+
+<p>Every shared file has to be hashed before it can be shared, because files are found by hash, not
+by name. The first refresh of a large share takes a while; progress shows in the status bar and in
+<span class="path">View &rarr; Hashing progress</span>.</p>
+
+<p><span class="path">Settings &rarr; Sharing &rarr; Hashing</span> controls the speed. You can cap
+the hashing rate so it does not saturate your disk, and choose how much of the file buffer to use.
+Hashing is a one-off cost per file &mdash; once a file is hashed it stays hashed, and only new or
+changed files are rehashed later.</p>
+
+<p><span class="path">File &rarr; Refresh file list</span> rescans for new files; the toolbar has the
+same button. Refreshes can also run on a schedule, and FulDC++ can watch an
+<em>incoming</em> folder and refresh only that.</p>
+
+<h2>Share profiles</h2>
+
+<p>A <strong>share profile</strong> is a named subset of your share. Rather than showing everyone
+everything, you can build a profile per community and attach it to a hub in that hub's favourite
+properties.</p>
+
+<ol class="steps">
+  <li>In <span class="path">Settings &rarr; Sharing</span>, create a new profile and name it.</li>
+  <li>Tick which of your shared folders belong in it.</li>
+  <li>In <span class="path">View &rarr; Favorite hubs</span>, open a hub's properties and select
+  that profile.</li>
+</ol>
+
+<p>Hubs using different profiles see genuinely different shares, and your reported share size
+changes to match. There is also a <strong>hidden</strong> profile for folders you want indexed for
+your own searching but not published anywhere.</p>
+
+<p><strong>FulDC++ only:</strong> share profiles work on older NMDC hubs too, not just ADC ones.</p>
+
+<h2>Slots and upload limits</h2>
+
+<p><span class="path">Settings &rarr; Connection settings &rarr; Speed &amp; slots</span> sets how many people
+can download from you at once. More slots means each one is slower; fewer means longer queues. Three
+to five is a reasonable starting point on a home connection, and many hubs set a minimum.</p>
+
+<p>Related options worth knowing:</p>
+
+<div class="flist">
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Extra slots</h3>
+    <p>Reserved slots you can hand out individually with <code>/grant</code> or the user right-click
+    menu, without opening a slot for everybody.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Automatic slot allocation</h3>
+    <p>Let FulDC++ open more slots while your upload bandwidth is not saturated.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Upload speed limit</h3>
+    <p>In <span class="path">Settings &rarr; Connection settings &rarr; Limits &amp; advanced</span>. Leaving a
+    little headroom keeps the rest of your connection usable.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Partial sharing</h3>
+    <p>Share the parts of a file you have already downloaded, before the whole thing is finished.
+    Leave it on &mdash; it makes popular files spread far faster.</p>
+  </div></div>
+</div>
+
+<h2>File lists</h2>
+
+<p>Other users browse your share as a file list. <span class="path">File &rarr; Browse own file
+list</span> shows exactly what they see &mdash; worth a look after your first refresh, to check that
+nothing is in there that should not be.</p>
+
+<p>Very large shares produce very large file lists. FulDC++ has a configurable ceiling on the size
+of a file list it will download from someone else, in
+<span class="path">Settings &rarr; Sharing &rarr; Sharing options</span>, so one enormous share
+cannot tie your client up.</p>
+
+<div class="gnav">
+  <a class="pv" href="downloading.html">&larr; Downloading</a>
+  <a class="nx" href="settings.html">Settings tour &rarr;</a>
+</div>
+</article>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap cols">
+    <div class="attrib">
+      <strong>FulDC++</strong> by Sulan &amp; Lansh, 2026.<br>
+      Based on AirDC++ © 2007–2024 Night and maksis · StrongDC++ © 2004–2011 Big Muscle.
+    </div>
+    <div>
+      <a href="../index.html">Home</a> · <a href="../features.html">Features</a> · <a href="index.html">Guide</a> · <a href="../plugins.html">Plugins</a> · <a href="../extensions.html">Extensions</a> · <a href="../download.html">Download</a> · <a href="../changelog.html">Changelog</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Remote access — FulDC++ guide</title>
+<meta name="description" content="Running the FulDC++ web server and using the client from a browser or phone.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/guide.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="../index.html">
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs>
+        <radialGradient id="o1" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#bcd2ff"/><stop offset="45%" stop-color="#6c7bff"/><stop offset="100%" stop-color="#3a3ad6"/></radialGradient>
+        <radialGradient id="o2" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#d9c2ff"/><stop offset="45%" stop-color="#9a6cff"/><stop offset="100%" stop-color="#5a2fd6"/></radialGradient>
+        <radialGradient id="o3" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#bff0ff"/><stop offset="45%" stop-color="#4fc3ff"/><stop offset="100%" stop-color="#1f7fd6"/></radialGradient>
+      </defs>
+      <ellipse cx="32" cy="34" rx="27" ry="12" fill="none" stroke="#6c7bff" stroke-width="2" opacity=".5" transform="rotate(-18 32 34)"/>
+      <circle cx="20" cy="30" r="9" fill="url(#o1)"/>
+      <circle cx="32" cy="36" r="10" fill="url(#o3)"/>
+      <circle cx="45" cy="28" r="8" fill="url(#o2)"/>
+    </svg>
+    <span>FulDC<span class="plus">++</span></span>
+    </a>
+    <span class="spacer"></span>
+    <a class="link" href="../index.html">Home</a>
+    <a class="link" href="../features.html">Features</a>
+    <a class="link active" href="index.html">Guide</a>
+    <a class="link" href="../plugins.html">Plugins</a>
+    <a class="link" href="../extensions.html">Extensions</a>
+    <a class="link" href="../changelog.html">Changelog</a>
+    <a class="btn primary cta" href="../download.html">Download</a>
+  </div>
+</header>
+
+<main>
+  <div class="gdoc">
+<nav class="gside">
+  <div class="subhead">Guide</div>
+  <a href="index.html">Overview</a>
+  <a href="getting-started.html">Getting started</a>
+  <a href="interface.html">The main window</a>
+  <a href="hubs.html">Hubs & chat</a>
+  <a href="search.html">Searching</a>
+  <a href="downloading.html">Downloading</a>
+  <a href="sharing.html">Sharing</a>
+  <a href="settings.html">Settings tour</a>
+  <a href="fuldc-features.html">FulDC++ extras</a>
+  <a href="web-ui.html" class="on">Remote & web UI</a>
+  <a href="troubleshooting.html">Troubleshooting</a>
+</nav>
+
+<article class="gmain">
+<h1>Remote &amp; web UI</h1>
+<p class="lede">Driving FulDC++ from a browser, a phone, or another computer.</p>
+
+<p>FulDC++ has a built-in web server. Turn it on and you get a full web interface to the same
+running client &mdash; queue, search, transfers, share, hubs and chat &mdash; from any browser on
+your network. It is the same client either way: the web UI is a second front-end, not a second
+copy.</p>
+
+<h2>Turning it on</h2>
+
+<ol class="steps">
+  <li>Open <span class="path">Settings &rarr; Web server</span>.</li>
+  <li>Set the <strong>HTTP port</strong>, and if you want encryption, the <strong>HTTPS
+  port</strong>. Each can be bound to a specific address; leaving the bind address empty listens on
+  everything.</li>
+  <li>Add at least one <strong>administrator account</strong> with a password. Accounts with
+  restricted permissions are added later from the web UI itself.</li>
+  <li>Press <strong>Start</strong>. The page shows the live server state.</li>
+  <li>Browse to <code>http://&lt;your-computer&gt;:&lt;port&gt;/</code> and log in.</li>
+</ol>
+
+<figure class="shot">
+  <img src="img/settings-webserver.png" alt="The FulDC++ web server settings page with ports and the user account list.">
+  <figcaption>Ports, bind addresses, the start/stop control and the web user list.</figcaption>
+</figure>
+
+<div class="note">
+  <strong>Do not expose this to the internet casually.</strong> A web account with full permissions
+  can do everything the client can &mdash; read your share, change your settings, queue downloads.
+  Keep it to your own network, or put it behind a VPN. If you must reach it from outside, use the
+  HTTPS port with a real certificate, not the plain HTTP one.
+</div>
+
+<h3>Accounts and permissions</h3>
+
+<p>The desktop settings page manages <strong>administrator</strong> accounts. Once the server is up,
+the web UI can create further accounts with restricted permissions &mdash; a limited account for a
+phone that may only search and queue, for example. An account saved with no permissions has none;
+it is not silently promoted to administrator.</p>
+
+<h2>What the web UI can do</h2>
+
+<p>Most of what the desktop client does, in a layout designed for a browser and usable on a phone:</p>
+
+<ul>
+  <li>Home dashboard, and the sidebar for everything else</li>
+  <li>Queue, Transfers, Finished downloads and uploads, Upload queue</li>
+  <li>Search, Search spy, ADL search, Auto search</li>
+  <li>Share, Favorite hubs, Favorite users and hub groups, Hublists</li>
+  <li>Hub chat and private messages, including <strong>rich text</strong> messages</li>
+  <li>RSS, Notepad, Highlights, Triggers, Chat filter, User commands</li>
+  <li>Protocol debug, Settings and the client updater</li>
+</ul>
+
+<p>It installs as a progressive web app, so you can add it to a phone home screen and have it behave
+like an application.</p>
+
+<h2>Extensions</h2>
+
+<p>The web server is also what runs <strong>extensions</strong> &mdash; Node.js add-ons that talk to
+the client over its API. Release checkers, share tools, chat bots and utilities all work this way,
+and they keep running whether or not a browser is open.</p>
+
+<p>Manage them from <span class="path">View &rarr; Extensions</span> in the desktop client:</p>
+
+<div class="flist">
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Catalogue</h3>
+    <p>Browse the extensions FulDC++ publishes and install with one click.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Install from a URL or a file</h3>
+    <p>Point it at an address, or drag a <code>.tgz</code> package onto the window.
+    <strong>FulDC++ only</strong> &mdash; installing from a local file is not something the
+    upstream client can do.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Settings</h3>
+    <p>Each extension declares its own options and FulDC++ renders them, so there is no separate
+    configuration file to hunt down.</p>
+  </div></div>
+  <div class="frow"><div class="dot"></div><div>
+    <h3>Enable, disable, auto-update</h3>
+    <p>Per extension, without uninstalling anything.</p>
+  </div></div>
+</div>
+
+<div class="note">
+  An extension is a program running on your computer with access to your client. Install ones you
+  have a reason to trust; the catalogue is signed and packages are pinned to a hash, but that
+  guarantees the file is what the publisher shipped &mdash; not that you want what it does.
+</div>
+
+<h2>If it will not connect</h2>
+
+<ul>
+  <li>Check the server actually started &mdash; the settings page shows its state, and a failed port
+  bind is reported in <span class="path">View &rarr; System log</span>.</li>
+  <li>Another program may already hold the port. Pick a different one.</li>
+  <li>Windows Firewall will ask the first time; if you missed the prompt, allow FulDC++ manually.</li>
+  <li>From another machine, use the computer's LAN address, not <code>localhost</code>.</li>
+</ul>
+
+<div class="gnav">
+  <a class="pv" href="fuldc-features.html">&larr; FulDC++ extras</a>
+  <a class="nx" href="troubleshooting.html">Troubleshooting &rarr;</a>
+</div>
+</article>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap cols">
+    <div class="attrib">
+      <strong>FulDC++</strong> by Sulan &amp; Lansh, 2026.<br>
+      Based on AirDC++ © 2007–2024 Night and maksis · StrongDC++ © 2004–2011 Big Muscle.
+    </div>
+    <div>
+      <a href="../index.html">Home</a> · <a href="../features.html">Features</a> · <a href="index.html">Guide</a> · <a href="../plugins.html">Plugins</a> · <a href="../extensions.html">Extensions</a> · <a href="../download.html">Download</a> · <a href="../changelog.html">Changelog</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

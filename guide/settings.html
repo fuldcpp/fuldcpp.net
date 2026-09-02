@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settings tour — FulDC++ guide</title>
+<meta name="description" content="A tour of every page in the FulDC++ settings dialog.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/guide.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="../index.html">
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs>
+        <radialGradient id="o1" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#bcd2ff"/><stop offset="45%" stop-color="#6c7bff"/><stop offset="100%" stop-color="#3a3ad6"/></radialGradient>
+        <radialGradient id="o2" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#d9c2ff"/><stop offset="45%" stop-color="#9a6cff"/><stop offset="100%" stop-color="#5a2fd6"/></radialGradient>
+        <radialGradient id="o3" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#bff0ff"/><stop offset="45%" stop-color="#4fc3ff"/><stop offset="100%" stop-color="#1f7fd6"/></radialGradient>
+      </defs>
+      <ellipse cx="32" cy="34" rx="27" ry="12" fill="none" stroke="#6c7bff" stroke-width="2" opacity=".5" transform="rotate(-18 32 34)"/>
+      <circle cx="20" cy="30" r="9" fill="url(#o1)"/>
+      <circle cx="32" cy="36" r="10" fill="url(#o3)"/>
+      <circle cx="45" cy="28" r="8" fill="url(#o2)"/>
+    </svg>
+    <span>FulDC<span class="plus">++</span></span>
+    </a>
+    <span class="spacer"></span>
+    <a class="link" href="../index.html">Home</a>
+    <a class="link" href="../features.html">Features</a>
+    <a class="link active" href="index.html">Guide</a>
+    <a class="link" href="../plugins.html">Plugins</a>
+    <a class="link" href="../extensions.html">Extensions</a>
+    <a class="link" href="../changelog.html">Changelog</a>
+    <a class="btn primary cta" href="../download.html">Download</a>
+  </div>
+</header>
+
+<main>
+  <div class="gdoc">
+<nav class="gside">
+  <div class="subhead">Guide</div>
+  <a href="index.html">Overview</a>
+  <a href="getting-started.html">Getting started</a>
+  <a href="interface.html">The main window</a>
+  <a href="hubs.html">Hubs & chat</a>
+  <a href="search.html">Searching</a>
+  <a href="downloading.html">Downloading</a>
+  <a href="sharing.html">Sharing</a>
+  <a href="settings.html" class="on">Settings tour</a>
+  <a href="fuldc-features.html">FulDC++ extras</a>
+  <a href="web-ui.html">Remote & web UI</a>
+  <a href="troubleshooting.html">Troubleshooting</a>
+</nav>
+
+<article class="gmain">
+<h1>Settings tour</h1>
+<p class="lede">Seven categories, forty-odd pages. Here is what is in each of them.</p>
+
+<p>Open settings with <span class="path">File &rarr; Settings</span> or the toolbar button. FulDC++
+does not use a settings tree: across the top is a row of <strong>category buttons</strong>, and
+under it a row of chips for the pages in the selected category.</p>
+
+<div class="note">
+  <strong>Can't find an option?</strong> There is a search box in the settings dialog
+  (<kbd>Ctrl</kbd>+<kbd>F</kbd>). Type part of a setting's name and it filters pages across every
+  category. This is usually faster than remembering which of the seven categories something is
+  filed under.
+</div>
+
+<figure class="shot">
+  <img src="img/settings-ribbon.png" alt="The FulDC++ settings dialog showing the category ribbon and page chips.">
+  <figcaption>Categories along the top, pages underneath, and the search box on the right.</figcaption>
+</figure>
+
+<h2>General</h2>
+
+<table>
+  <thead><tr><th>Page</th><th>What is there</th></tr></thead>
+  <tbody>
+    <tr><td>General</td><td>Your nick, e-mail and description; the user profile (Normal / RAR hubs /
+      LAN); interface language; start with Windows and how long to wait before doing so; and
+      <strong>Online identities</strong>, where you can publish your accounts on other services for
+      other users to see.</td></tr>
+    <tr><td>Away</td><td>Away mode: the away message, whether to go away automatically after an idle
+      period, and whether to respond to private messages while away.</td></tr>
+  </tbody>
+</table>
+
+<h2>Connection settings</h2>
+
+<table>
+  <thead><tr><th>Page</th><th>What is there</th></tr></thead>
+  <tbody>
+    <tr><td>Connection settings</td><td>Connectivity: automatic detection, active or passive mode, TCP/UDP/TLS
+      ports, UPnP, and your external address. IPv4 and IPv6 are configured on separate tabs. This is
+      the page that decides whether other people can connect to you &mdash; see
+      <a href="troubleshooting.html">Troubleshooting</a>.</td></tr>
+    <tr><td>Speed &amp; slots</td><td>Your reported connection speed, upload slots, extra slots and
+      automatic slot allocation.</td></tr>
+    <tr><td>Limits &amp; advanced</td><td>Upload and download speed limits, including a separate set
+      of limits for a chosen time of day, and per-user download limits.</td></tr>
+    <tr><td>Proxies</td><td>SOCKS5 and HTTP proxy settings for outgoing connections.</td></tr>
+  </tbody>
+</table>
+
+<h2>Downloads</h2>
+
+<table>
+  <thead><tr><th>Page</th><th>What is there</th></tr></thead>
+  <tbody>
+    <tr><td>Downloads</td><td>Where finished downloads go, and the temporary folder used while a
+      file is incomplete.</td></tr>
+    <tr><td>Download locations</td><td>Rules sending particular file types to particular
+      folders.</td></tr>
+    <tr><td>File preview</td><td>External programs for previewing a partially downloaded file, and
+      the command lines to launch them with.</td></tr>
+    <tr><td>Priorities</td><td>How the queue is ordered, and the automatic priority system that
+      balances bundles by size and progress.</td></tr>
+    <tr><td>Download options</td><td>Segmented downloading: how many segments per file and the
+      minimum segment size.</td></tr>
+    <tr><td>Download scanning <strong>(FulDC++)</strong></td><td>SFV and release-structure checks,
+      an external virus scanner with its command line, timeout and size cap, what to do on a hit,
+      the quarantine folder and excluded paths.</td></tr>
+  </tbody>
+</table>
+
+<h2>Sharing</h2>
+
+<table>
+  <thead><tr><th>Page</th><th>What is there</th></tr></thead>
+  <tbody>
+    <tr><td>Sharing</td><td>Your shared folders and their virtual names, and your share
+      profiles.</td></tr>
+    <tr><td>Sharing options</td><td>The skiplist, whether hidden and system files are shared,
+      symbolic-link handling, automatic refresh intervals, and the maximum size of a file list
+      FulDC++ will download from another user.</td></tr>
+    <tr><td>Hashing</td><td>Hashing speed limits and buffer size, plus hash database
+      maintenance.</td></tr>
+  </tbody>
+</table>
+
+<h2>Web server</h2>
+
+<p>A category of its own: the HTTP and HTTPS ports, the address to bind each to, a start/stop button
+with the live server state, and the list of <strong>administrator accounts</strong>. Accounts with
+restricted permissions are created from the web UI itself, not here. See
+<a href="web-ui.html">Remote &amp; web UI</a> for what to do with it.</p>
+
+<h2>Appearance</h2>
+
+<table>
+  <thead><tr><th>Page</th><th>What is there</th></tr></thead>
+  <tbody>
+    <tr><td>Appearance</td><td>The big checkbox list: timestamps, join and leave messages, bolding
+      of active tabs, tray behaviour, taskbar tabs, tabs on top, user list on the left, emoticons,
+      BBCode, magnet handling, inline GIFs, multiline input and send buttons, the Explorer visual
+      theme for lists, and date formats.</td></tr>
+    <tr><td>Dark theme <strong>(FulDC++)</strong></td><td>Dark mode on or off, 52 presets and a
+      custom palette editor. Applies live, without restarting.</td></tr>
+    <tr><td>Colors &amp; fonts</td><td>Chat and list fonts, and the colour of every kind of chat
+      message &mdash; your own, others', operators, private messages, favourites, timestamps.</td></tr>
+    <tr><td>&hellip; Progress bar colors</td><td>Colours and style of the transfer progress bars.</td></tr>
+    <tr><td>&hellip; List view colors</td><td>Row colours in lists, including the duplicate-file
+      highlighting used in search results.</td></tr>
+    <tr><td>Sounds</td><td>A sound per event: private message, download finished, hub connected, and
+      so on.</td></tr>
+    <tr><td>Toolbar</td><td>Which buttons appear, icon size, and icon packs, with a Reset to
+      default.</td></tr>
+    <tr><td>Windows</td><td>Which windows open automatically at startup, and whether new windows pop
+      up in front or open behind. Also the confirmation prompts &mdash; on exit, on removing a
+      download, on closing all tabs.</td></tr>
+    <tr><td>Tabs</td><td>Tab strip position, width, grouping and colours.</td></tr>
+    <tr><td>Popups</td><td>Toast notifications: which events raise one, how long it stays and where
+      it appears.</td></tr>
+    <tr><td>Highlight</td><td>Rules that colour or flag chat lines matching a word or pattern
+      &mdash; your nick, a release name, anything.</td></tr>
+    <tr><td>AirAppearance</td><td>The workspace background image, duplicate-file colouring, how many
+      lines of history a reopened chat shows, and the <strong>chat background image</strong> with
+      its placement and blend strength.</td></tr>
+  </tbody>
+</table>
+
+<h2>Advanced</h2>
+
+<table>
+  <thead><tr><th>Page</th><th>What is there</th></tr></thead>
+  <tbody>
+    <tr><td>Advanced</td><td>Auto-follow hub redirects, whether FulDC++ handles
+      <code>magnet:</code> and hub links, ADL search behaviour, partial sharing, and the
+      watchdog.</td></tr>
+    <tr><td>GeoIP</td><td>The IP geolocation database that puts country flags in the user list:
+      whether to use it, where to fetch it and how often to refresh.</td></tr>
+    <tr><td>Auto-Recovery <strong>(FulDC++)</strong></td><td>Automatic recovery after a crash or a
+      hang: the hang timeout, cooldown, maximum restarts per hour and the startup recovery prompt.
+      The <strong>crash reporting</strong> options are here too &mdash; whether to send reports,
+      whether to include the system log and how much of it, deep dumps, an upload size cap, and
+      buttons to create a report now or delete queued ones.</td></tr>
+    <tr><td>Backup <strong>(FulDC++)</strong></td><td>Scheduled encrypted backups of your
+      configuration, how many to keep and where to put them.</td></tr>
+    <tr><td>Experts only</td><td>Buffer sizes, what double-clicking a user does, the action taken on
+      shutdown, share bloom-filter mode and log line counts. The name is a fair warning.</td></tr>
+    <tr><td>Logs</td><td>Which events are logged, the log folder, and the filename and format of each
+      log type.</td></tr>
+    <tr><td>User commands</td><td>Your own right-click menu entries for users and hubs, built from
+      chat command templates.</td></tr>
+    <tr><td>Encryption</td><td>Transfer encryption (TLS) mode and your client certificates.</td></tr>
+    <tr><td>Miscellaneous</td><td>Which media player the media toolbar drives and where it is
+      installed, password protection for the client and tray, and the saved histories for search and
+      other boxes.</td></tr>
+    <tr><td>Message filter</td><td>Rules that drop chat and private messages matching a pattern
+      &mdash; the spam filter.</td></tr>
+    <tr><td>Chat triggers <strong>(FulDC++)</strong></td><td>Keyword and regex automation: match
+      something in chat, respond or act. Supports capture groups, away-only mode, per-hub scoping,
+      fire statistics and import/export.</td></tr>
+    <tr><td>Search</td><td>Automatic search intervals, result limits and SUDP encrypted search
+      results.</td></tr>
+    <tr><td>Search types</td><td>The file-type list used by every search window, and your own custom
+      types.</td></tr>
+    <tr><td>Plugins</td><td>Installed native plugins, with <strong>Get plugins&hellip;</strong> to
+      open the signed plugin catalogue.</td></tr>
+    <tr><td>Browser <strong>(FulDC++)</strong></td><td>Settings for the built-in WebView2 browser
+      tab: home page, downloads and which URL schemes it will follow.</td></tr>
+    <tr><td>Rich text &amp; attachments <strong>(FulDC++)</strong></td><td>Rich text on or off,
+      composing in rich text by default, live preview, automatic fetching of inline pictures,
+      temporary chat shares, maximum message size, link display length, and the caps on inline media
+      size, count and resolution. The GIF search API key goes here, and so does the live list of
+      your active temporary shares.</td></tr>
+  </tbody>
+</table>
+
+<div class="note">
+  Settings are saved when you press OK, and written to <code>Documents\FulDC++</code>. If you ever
+  need to start clean, close FulDC++ and rename that folder rather than deleting it &mdash; it
+  contains your favourites and your queue as well as your settings.
+</div>
+
+<div class="gnav">
+  <a class="pv" href="sharing.html">&larr; Sharing</a>
+  <a class="nx" href="fuldc-features.html">FulDC++ extras &rarr;</a>
+</div>
+</article>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap cols">
+    <div class="attrib">
+      <strong>FulDC++</strong> by Sulan &amp; Lansh, 2026.<br>
+      Based on AirDC++ © 2007–2024 Night and maksis · StrongDC++ © 2004–2011 Big Muscle.
+    </div>
+    <div>
+      <a href="../index.html">Home</a> · <a href="../features.html">Features</a> · <a href="index.html">Guide</a> · <a href="../plugins.html">Plugins</a> · <a href="../extensions.html">Extensions</a> · <a href="../download.html">Download</a> · <a href="../changelog.html">Changelog</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
