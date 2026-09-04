@@ -77,12 +77,27 @@ into the client (`airdcpp/airdcpp/core/crypto/pubkey.h`). Do this once, keep `ai
    > not direct children of `<DCUpdate>`. The client's `announceVersion()` searches for them while
    > positioned inside `<VersionInfo>`; if they're outside, the "update available" dialog **never
    > appears** (silently — no error). This is how AirDC++'s own manifest is structured.
-3. Run:
+3. Run `/createupdate` **from the staged application directory** — a copy of the folder the
+   release zip is built from, not the build output:
    ```
-   FulDC.exe /createupdate --resource-directory="...\installer" --output-directory="...\out"
+   <staged>\FulDC.exe /createupdate --resource-directory="<staged>" --output-directory="...\out"
    ```
    This produces `updater_x64_<ver>.zip`, fills in `version.xml` (Build / VersionString / TTH /
    download URL), converts it to **LF** endings and signs it with `air_rsa` → `version.xml.sign`.
+
+   > **Why the staged directory, and not `compiled\...\windows` plus `installer`.** The package is
+   > assembled from two places: `Node.js`, `FulDC.exe` and `FulDC.pdb` come from the directory of
+   > the *running* executable, and `Themes`, `Web-resources`, `EmoPacks`, `Language` and
+   > `fuldc.jpg` from `--resource-directory`. The build output has no `Node.js` at all (it has
+   > been carried from one release payload to the next since 1.098) and its `FulDC.pdb` is the
+   > linker's full ~385 MB one rather than the stripped copy; `installer\` has no `fuldc.jpg`.
+   > Only the staged folder holds a correct copy of everything, so run it from there. Every
+   > missing piece is reported in a **message box**, not on the console, so a run that fails from
+   > a script looks like a bare exit code 1.
+
+   > Run it from a **copy** of the staged folder. Starting an executable inside the folder the
+   > release zip is built from creates a profile there — a per-user TLS key and CID — and the
+   > staging script's identity check will then refuse to build the zip.
 
    > `/createupdate` looks for the key at `<output-directory>\air_rsa` — it takes no key argument
    > (`UpdaterCreator::createUpdate`). So copy `c:\airdc-ng\keys\air_rsa` into the **output
