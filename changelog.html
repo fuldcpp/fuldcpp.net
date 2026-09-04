@@ -44,6 +44,22 @@
 
       <div style="max-width:720px;margin:0 auto">
         <div class="rel">
+          <h3>1.10 <span class="date">2026</span></h3>
+          <ul>
+            <li><strong>The language picker works, and works without a restart</strong> — FulDC++ had offered a list of languages for years while the <code>Language</code> folder shipped empty, so picking one did nothing. All 18 translations are now included, and choosing one applies the moment you press OK: menus, toolbars, tabs, list headings, and the controls inside every open window. Only switching between a left-to-right and a right-to-left language still asks for a restart.</li>
+            <li><strong>An installer</strong> — as well as the portable zip. It can import settings from an existing DC++, ApexDC++ or StrongDC++ profile, and lets you choose whether settings live beside the program or in your user profile.</li>
+            <li><strong>The source code is published.</strong> FulDC++ is GPL-3.0; the source for this release is available alongside the download.</li>
+            <li><strong>Rich text in chat on ADC hubs (RTF0)</strong> — headings, bold, italic, strikethrough, inline code and code blocks, quotes, lists, links and inline pictures, with a Markdown composer, a live preview, and formatting buttons that toggle rather than nest. Only sent where it will be understood, and it can be switched off entirely. The web interface can send and receive it too.</li>
+            <li><strong>Plugins and extensions can be found and installed from inside the client</strong> — the plugin list is signed with the release key and each download is checked against a pinned hash; extensions can also be installed from a package file on disk, and the extension catalogue is hosted by FulDC++ itself.</li>
+            <li><strong>A resizable Settings dialog with a search box</strong>, a customisable toolbar with your own shortcut buttons, redrawn icons throughout, an optional userlist on the left of hub windows, and chat background pictures.</li>
+            <li><strong>Display scaling is honoured</strong> — emoticons, chat buttons and the emoticon picker follow the display scale, and popups ask the monitor they are on rather than the primary one.</li>
+            <li><strong>Public Hubs can merge every hub list at once</strong>, filter as you type, and ask other users which hubs they recommend. Share profiles now work on NMDC hubs.</li>
+            <li>Security — 34 fixes. The web interface's "HTTPS" port never actually encrypted anything, so anyone who switched it on and signed in sent their password in the clear; sharing a folder that contained the settings folder published everything in it, the TLS private key included; a web account saved with no permissions was loaded back as a full administrator; a rich text message could crash the client on arrival; and any user on an ADC hub could knock you off it or impersonate it. All fixed.</li>
+            <li>Fixes — 341 of them. Slow-source disconnection dropped fast sources and kept slow ones; source limits never bound on folder downloads; several settings could be given a value that broke the thing they control; minimising to the tray left the client at reduced priority for the session; and "balanced" automatic priority ranked downloads by memory address.</li>
+            <li>Help → Guides now opens an actual guide, at <a href="guide/">fuldcpp.net/guide</a>.</li>
+          </ul>
+        </div>
+        <div class="rel">
           <h3>1.09 <span class="date">2026</span></h3>
           <ul>
             <li><strong>Built-in web browser</strong> — browse the web in a tab inside the client, with a navigation toolbar, address bar, favourites &amp; history (with an organize dialog), its own settings page, an "Open in internal browser" option on chat links, and downloads that follow your download settings.</li>
