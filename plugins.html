@@ -243,13 +243,14 @@
         <div class="plugin">
           <div class="phead">
             <h2>Protocol Analyzer</h2>
-            <span class="pver">v1.02</span>
+            <span class="pver">v1.03</span>
           </div>
           <p class="pdesc">Captures and decodes live ADC and NMDC traffic: hub, client-to-client and UDP search messages in a filterable table, with a decoded field inspector, free-text and pattern search, and optional logging.</p>
           <div class="flist">
             <div class="frow"><span class="dot"></span><div><p>Written by <b>iceman50</b>, republished for FulDC++ so it can be installed from the client.</p></div></div>
-            <div class="frow"><span class="dot"></span><div><p>1.02 adds full ADC <b>BBS0</b> bulletin-board decoding and an editable <code>protocol-definitions.xml</code> catalog of ADC and NMDC commands, features and fields, which the plugin loads at startup and falls back from safely if it is invalid.</p></div></div>
-            <div class="frow"><span class="dot"></span><div><p>The author has not released 1.02 himself, so this package is <b>our build of his source</b>, from revision <code>621df978</code>. The complete corresponding source ships with the release, including the two toolchain patches it carries.</p></div></div>
+            <div class="frow"><span class="dot"></span><div><p>Decodes full ADC <b>BBS0</b> bulletin boards, and carries an editable <code>protocol-definitions.xml</code> catalog of ADC and NMDC commands, features and fields that the plugin loads at startup and falls back from safely if it is invalid.</p></div></div>
+            <div class="frow"><span class="dot"></span><div><p>1.03 fixes seven defects we found auditing the source, including an NMDC escape that made a <code>|</code> in ordinary chat display as <code>&amp;#124;</code>, and a catalog that followed the Windows locale instead of the language FulDC++ is running in.</p></div></div>
+            <div class="frow"><span class="dot"></span><div><p>The author has not released this version himself, so the package is <b>our build of his source</b> at revision <code>621df978</code> plus those fixes. The complete corresponding source ships with the release, one commit per change.</p></div></div>
             <div class="frow"><span class="dot"></span><div><p>Sensitive values — ADC private IDs and UDP keys, NMDC passwords — are redacted by default, and compressed or encrypted payloads are never decoded. Redaction can be turned off per capture in Preferences.</p></div></div>
           </div>
           <div class="pmeta">
@@ -260,9 +261,9 @@
             <span><b>13.1 MB</b></span>
           </div>
           <div class="pactions">
-            <a class="btn primary" href="https://github.com/fuldcpp/plugins/releases/download/protocolanalyzer-v1.02/ProtocolAnalyzer.dcext">Download <small>· .dcext</small></a>
-            <a class="btn ghost" href="https://github.com/fuldcpp/plugins/releases/tag/protocolanalyzer-v1.02">Release notes</a>
-            <a class="btn ghost" href="https://github.com/fuldcpp/plugins/releases/download/protocolanalyzer-v1.02/ProtocolAnalyzer-source.zip">Source</a>
+            <a class="btn primary" href="https://github.com/fuldcpp/plugins/releases/download/protocolanalyzer-v1.03/ProtocolAnalyzer.dcext">Download <small>· .dcext</small></a>
+            <a class="btn ghost" href="https://github.com/fuldcpp/plugins/releases/tag/protocolanalyzer-v1.03">Release notes</a>
+            <a class="btn ghost" href="https://github.com/fuldcpp/plugins/releases/download/protocolanalyzer-v1.03/ProtocolAnalyzer-source.zip">Source</a>
           </div>
         </div>
 
