@@ -86,13 +86,35 @@ typical hub is a minority of users.</p>
 </ol>
 
 <p><code>/connection</code> in any chat prints your current mode, external IP and ports, which is
-the quickest way to confirm what you have.</p>
+the quickest way to confirm what you have. <code>/testports</code> goes one step further: it asks
+the project's own service to connect back to you on your transfer and encrypted-transfer ports
+and reports whether each was reachable, refused, or gave no answer. The same test sits behind the
+<em>Test ports</em> button on the Connection page.</p>
 
 <div class="note">
   Behind carrier-grade NAT, a mobile connection or a VPN without port forwarding, active mode may
   simply not be available. Passive still works &mdash; you will just see fewer sources. A VPN
   provider that offers port forwarding solves it properly.
 </div>
+
+<h3>On a VPN whose address changes</h3>
+
+<p>A VPN exit can change its address while the client is running. FulDC++ re-reads its external
+address when connectivity detection finishes, when the machine's network changes and once an
+hour, and rejoins hubs automatically when it changes, so the address other users are given
+follows the VPN. Two things to check when
+passive users still cannot reach you although everything looks right:</p>
+
+<ul>
+  <li>Run <code>/testports</code>. Peers that support encryption connect to your
+  <em>encrypted transfer</em> port, not the transfer port, and a VPN that forwards a single port
+  covers only one of them. Both must come back reachable.</li>
+  <li>With automatic detection on, a port mapping made on your home router is worthless behind a
+  VPN: the router is not your internet exit. The system log says so when it notices, and the
+  address it announces is the one the internet sees, not the router's.</li>
+</ul>
+
+<p>The search port uses UDP and cannot be tested this way; if searches return results, it works.</p>
 
 <h2>Downloads that will not move</h2>
 
