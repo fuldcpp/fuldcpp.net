@@ -47,11 +47,12 @@
         <div class="plugin">
           <div class="phead">
             <h2>Release fixxer</h2>
-            <span class="pver">v1.2.20-beta</span>
+            <span class="pver">v1.2.28-beta</span>
           </div>
           <p class="pdesc">Scans downloaded and shared release directories for missing or extra files (CRC/SFV/NFO) and automatically redownloads whatever is broken or missing. A fork of the official release validator.</p>
           <div class="flist">
             <div class="frow"><span class="dot"></span><div><p><code>/rvalidator accept &lt;path&gt;</code> exempts a folder you know is fine, and a stuck bundle can be accepted and shared straight from the download queue.</p></div></div>
+            <div class="frow"><span class="dot"></span><div><p>A search that finds nothing is retried on a timer instead of giving up, and a result matching the folder name exactly wins over the first hit.</p></div></div>
             <div class="frow"><span class="dot"></span><div><p>Works alongside the SFV folder checker and the sample/proof checker below.</p></div></div>
           </div>
           <div class="pmeta">
@@ -61,19 +62,20 @@
             <span><b>Node.js</b></span>
           </div>
           <div class="pactions">
-            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-release-fixxer-v1.2.20-beta">Release notes</a>
-            <a class="btn ghost" href="https://www.npmjs.com/package/airdcpp-release-fixxer">Source</a>
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-release-fixxer-v1.2.28-beta">Release notes</a>
+            <a class="btn ghost" href="https://github.com/sharefixxers/airdcpp-release-fixxer">Source</a>
           </div>
         </div>
 
         <div class="plugin">
           <div class="phead">
             <h2>Sample / proof checker</h2>
-            <span class="pver">v1.2.23-beta</span>
+            <span class="pver">v1.3.3-beta</span>
           </div>
           <p class="pdesc">Checks release folders for a missing Sample (with a video file present) or Proof subfolder, and searches for and redownloads just that subfolder when it is needed.</p>
           <div class="flist">
             <div class="frow"><span class="dot"></span><div><p>Only the missing subfolder is fetched, not the whole release.</p></div></div>
+            <div class="frow"><span class="dot"></span><div><p>Retries back off (a minute, five, thirty, then hourly) and stop the moment the release leaves your download queue.</p></div></div>
             <div class="frow"><span class="dot"></span><div><p>Check a single folder on demand from the right-click menu, in the download queue or in your own filelist.</p></div></div>
           </div>
           <div class="pmeta">
@@ -83,18 +85,19 @@
             <span><b>Node.js</b></span>
           </div>
           <div class="pactions">
-            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-sample-proof-checker-v1.2.23-beta">Release notes</a>
-            <a class="btn ghost" href="https://www.npmjs.com/package/airdcpp-sample-proof-checker">Source</a>
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-sample-proof-checker-v1.3.3-beta">Release notes</a>
+            <a class="btn ghost" href="https://github.com/sharefixxers/airdcpp-sample-proof-checker">Source</a>
           </div>
         </div>
 
         <div class="plugin">
           <div class="phead">
             <h2>SFV folder checker</h2>
-            <span class="pver">v1.2.9-beta</span>
+            <span class="pver">v1.2.15-beta</span>
           </div>
           <p class="pdesc">Hub command <code>/sfvcheck &lt;folder&gt;</code> that recursively checks a folder for <code>.sfv</code> files and compares their CRC32 against the real files on disk.</p>
           <div class="flist">
+            <div class="frow"><span class="dot"></span><div><p>Automatic deletion is capped, so a dropped drive or a moved share cannot turn one scan into a mass delete.</p></div></div>
             <div class="frow"><span class="dot"></span><div><p>Works together with the release fixxer.</p></div></div>
           </div>
           <div class="pmeta">
@@ -104,8 +107,8 @@
             <span><b>Node.js</b></span>
           </div>
           <div class="pactions">
-            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-sfv-folder-checker-v1.2.9-beta">Release notes</a>
-            <a class="btn ghost" href="https://www.npmjs.com/package/airdcpp-sfv-folder-checker">Source</a>
+            <a class="btn ghost" href="https://github.com/fuldcpp/extensions/releases/tag/airdcpp-sfv-folder-checker-v1.2.15-beta">Release notes</a>
+            <a class="btn ghost" href="https://github.com/sharefixxers/airdcpp-sfv-folder-checker">Source</a>
           </div>
         </div>
 
